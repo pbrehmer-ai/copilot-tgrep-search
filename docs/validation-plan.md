@@ -1,47 +1,46 @@
-# Validation plan — next stage
+# Validation and acceptance
 
-**Not executed.** This initial repository contains authored instructions and setup code. No installer run, Copilot integration trial, or performance benchmark has been performed. This document is the handoff for the next stage, not a record of passing checks.
+## Current evidence
 
-## Setup and recovery
+The original Windows x64 pilot tested integration commit b5dca25dad65161020a678adab7458e35e943c46. Installation, discovery and engine equivalence passed; complete Copilot execution failed. See [results](benchmark-results.md). The revised helper tests are separate from that corpus benchmark.
 
-- Exercise the installer on supported Windows x64 and ARM64 environments, with Windows PowerShell 5.1 and PowerShell 7 where available.
-- Verify a clean installation, an existing skill, an existing instruction file with unrelated content, and a repeated installation.
-- Check UTF-8/UTF-16 instruction files, exact marker replacement, malformed/duplicate markers, Unicode paths, and paths containing spaces.
-- Confirm archive digest mismatch and network failure stop with a clear error; examine the filesystem after partial failures.
-- Confirm `-WhatIf` performs no downloads or writes, and no setup action weakens script or tool policies.
-- Confirm user PATH changes preserve other entries and newly launched Visual Studio finds the intended executable.
-- Confirm the recovery manifest and backups allow a controlled rollback while preserving changes made after installation.
+Run the local fixture checks from a company-approved PowerShell host with Git and the reviewed tgrep executable available:
 
-## Copilot behavior in real solutions
+```powershell
+.\tests\Test-Helpers.ps1
+.\scripts\Install.ps1 -WhatIf
+```
 
-| Scenario | Evidence to collect |
+The helper test creates an isolated temporary Git repository, starts a server only there, verifies it is reused, and stops that test server. It retains the fixture and exclusion backup for inspection. No company source tree is modified. Checks cover parsing, preview, initial readiness, local exclusion preservation/effectiveness, root boundaries, filename batches, filters, truncation, quoting, Unicode filenames, exit 1/2 handling, direct freshness and client timeout.
+
+## Installer matrix still required for release
+
+The original real installer passed on PowerShell 7.6.5 / x64. Validate the revised package's full clean install and upgrade, copied helpers, recovery record and unrelated-instruction/PATH preservation in a test account. Also exercise UTF-8/UTF-16, malformed markers, network/hash failure, permission failures, intervening edits, repeat install, repository-preparation failure after personal installation, and rollback. Validate Windows PowerShell 5.1 and ARM64 separately. Syntax compatibility is not runtime proof.
+
+## Complete Copilot acceptance
+
+Use the same model/mode, source revision, scope and answer requirements before and after setup.
+
+| Scenario | Pass evidence |
 | --- | --- |
-| Ordinary broad search, without mentioning tgrep | Skill activation and actual tgrep terminal calls. |
-| Repository with no index | Correct first-run behavior, time to readiness, and no unsupported absence claim. |
-| Existing warm server | Reuse without redundant startup/status calls before every query. |
-| Nested solution in a monorepo | Correct root and glob scope; no accidental fallback to a subdirectory index. |
-| Linked project or file outside the main root | Explicit authorized scope and accurate explanation of what was searched. |
-| Recently saved edit, generated file, branch switch | Relevant direct-scan verification when freshness matters. |
-| Unsaved editor change | IDE/editor context; no claim that tgrep read unsaved data. |
-| Semantic references and overloads | Use of symbol-aware IDE tools. |
-| Hidden/ignored/large file requested | Correct admission flags and scope disclosure. |
-| Missing binary, stopped server, unsupported option | Clear fallback and useful answer. |
-| Large result set | Scope/output reduction without treating truncation as exhaustive. |
+| Minimal terminal control without tgrep | Correct version/directory in the final chat answer |
+| Ordinary broad search without naming skill | Skill activation, real query and correct completed answer |
+| First preparation, no existing index | Waits for initial readiness; no absence claim from partial data |
+| Warm repeated searches | Same root/server, no repeated initialization/help/status loop |
+| Nested solution in monorepo | Source root preserved; subtrees filtered with globs |
+| Batched helper output | Counts, truncation, stderr and native exit codes interpreted correctly |
+| Saved edits, generation, branch switch, decisive absence | Appropriate current saved-file verification |
+| Unsaved buffers and semantic references | IDE/editor context and symbol-aware tools |
+| Linked/outside-root project | Explicit authorized additional scope |
+| Missing binary, stopped server, errors or blocked scripts | Useful bounded fallback, no silent false-negative result |
+| Terminal completion/output failure | Stops retry loop and reports limitation; does not invent an answer |
 
-Compare important search results with a current direct scan under equivalent filters. Investigate differences instead of assuming either tool's default file set is identical.
+Document any assisted continuation; it is not proof of autonomous setup or completion. A wrapper test cannot certify a model followed the skill.
 
-## Measure useful speed
+## Performance reproduction
 
-Use representative employee tasks on the same machine and saved source revision. Record the Visual Studio build, Copilot model, repository size, tgrep version, query scope, and whether the server/index is cold or warm.
+Use [benchmarks/measure.py](../benchmarks/README.md) for paired engine measurements. Record cold index cost separately, alternate tool order, retain outliers, validate complete path sets and report scope. Also measure full agent tasks once the terminal bridge works, recording manual approval time separately. Never relabel engine or algorithm-replay ratios as Copilot productivity multipliers.
 
-Measure separately:
+## Release decision
 
-1. Initial installation and index creation.
-2. Repeated warm searches and the amount of returned text.
-3. Complete Copilot tasks with and without the integration, including tool/model round trips and verification work.
-
-Repeat comparable trials, keep output scopes equivalent, and report variability. Check correctness before claiming a speed improvement. Include cases where tgrep does not win and where startup costs dominate.
-
-## Before broad rollout
-
-Record results against the repository commit used for the pilot. Resolve material correctness or setup problems, agree on supported environments, establish employee access and package ownership, and replace the draft status only when the evidence supports it. Do not mark this checklist as complete based solely on source review.
+Only mark a supported configuration ready after clean installation/upgrade, representative correctness cases and complete agent answers pass. Keep known failures and slower cases visible. Do not declare the remaining matrix complete from code review or a single happy-path fixture run.

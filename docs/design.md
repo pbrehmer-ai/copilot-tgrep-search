@@ -10,7 +10,7 @@ tgrep uses a trigram index to identify likely candidate files before searching t
 
 | Decision | Reason |
 | --- | --- |
-| One self-contained `tgrep-search/SKILL.md` | Copilot can follow the common workflow without fetching documentation on each task. |
+| One `tgrep-search/SKILL.md` with adjacent helpers | Copilot can follow the procedure without fetching documentation; helpers preserve native results and automate repository preparation. |
 | Short default instruction | Skill discovery is conditional; the preference makes the intended search choice explicit without loading the full procedure on every request. |
 | Personal installation for the first rollout | One setup serves multiple projects and avoids editing every source repository. A repository-scoped option remains available. |
 | Pinned tgrep 1.0.5 | Documentation and executable behavior can be reviewed against the same release. |
@@ -25,7 +25,7 @@ tgrep uses a trigram index to identify likely candidate files before searching t
 
 Microsoft's [published benchmarks](https://github.com/microsoft/tgrep/blob/v1.0.5/BENCHMARKS.md) compare tgrep client/server searches against ripgrep over large repositories. Index creation happens before search timing. Those results support investigating this approach, but do not establish a speedup for this Visual Studio integration or for every solution.
 
-The pilot must measure the employee's workflow: initial setup/index time, subsequent searches, Copilot tool calls, correctness, output volume, and overall task duration. Until then, describe this repository as **designed to speed up repeated repository searches**, not as a verified multiplier for Copilot productivity.
+The [local pilot](benchmark-results.md) measured initial index cost and paired engine performance: 4.16x across all timed warm searches and 8.74x by summed per-query medians. It also established automatic skill loading and actual tgrep invocation. Complete Copilot answers failed acceptance because terminal results did not return reliably, including without tgrep. The new helpers do not constitute a fix for that output channel or a measured Copilot productivity multiplier.
 
 ## Microsoft guide adaptations
 

@@ -1,45 +1,34 @@
 # Team rollout
 
-The intended employee experience is one setup action, then normal work in Visual Studio Agent mode. This document describes the rollout after the initial review and pilot. No company-wide deployment has been performed.
+## Employee experience
 
-## Distribution model
+Distribute a reviewed revision with the pinned tgrep 1.0.5 executable: one personal installation, one preparation step for each source repository/session, then ordinary Copilot work. The combined installer option accepts the first source root. Indexes and servers are per source root; the skill is per user.
 
-Maintain one reviewed copy of the skill and default instruction in this repository. Package a specific repository revision and the pinned Microsoft tgrep release through the company's existing software distribution channel.
+The repository is private. Employees need read access or an approved internal package. A Copilot license alone does not grant repository access. Do not make it public to work around access management.
 
-The setup script supports a per-user installation without administrator rights. IT can instead place the same files through its existing device-management process. For offline or restricted devices, stage the approved tgrep executable and use the manual setup instructions; the current script downloads from GitHub and has no offline switch.
+## Current gate
 
-The initial repository is private. Before employee rollout, give the intended team read access through the repository owner's normal access-management process, or distribute an approved package internally. Employees cannot clone a private personal repository solely because they have a Copilot license. Do not publish the repository publicly just to simplify setup.
+The [pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results. **It failed unattended completion in the tested Visual Studio configuration, including under Autopilot.** The current revision improves setup and error capture but does not claim a fix for that terminal output channel. Company-wide deployment remains gated on a passing complete agent task.
 
-## Prerequisites to confirm
+## Distribution checklist
 
-- The target is **GitHub Copilot in Visual Studio 2026 18.5+ on Windows x64/ARM64**. A subscription using a Claude model inside Copilot is still Copilot; it does not load Claude Code configuration automatically by virtue of model choice.
-- Agent mode and terminal commands are available under the company's Copilot settings.
-- The company permits the local tgrep executable, local index storage, and a loopback search server where needed.
-- The chosen installation method respects script-signing, software-distribution, and network policies. Tool approvals are configured through the existing Visual Studio workflow, not granted by this skill.
-- Repo-specific exclusions and instruction files are accounted for. A terminal search must not be used to bypass intended data-access boundaries.
+1. Select the supported VS build, shell profile and model. Validate terminal initialization and a minimal command-to-chat round trip first.
+2. Review the skill, default rule and three adjacent helper scripts as one package. Check the pinned executable checksum. Distribute through existing IT tooling or the supplied installer; the installer downloads from GitHub and has no offline switch.
+3. Confirm permission for local executable/index storage and a loopback server. Installation does not grant Copilot tool permissions. Autopilot is optional, not a prerequisite or a substitute for healthy tools.
+4. Prepare each repository's actual root; preserve custom index workflows and project exclusions. Verify local .tgrep exclusion after creation. Avoid duplicate personal/repository copies of the same skill.
+5. Run the [acceptance scenarios](validation-plan.md) on representative solutions. Include complete answers, fresh/negative checks, errors and repeated searches. Record model/tool overhead separately from engine latency.
+6. Start with a small team using the exact employee package. Expand only after onboarding and completion pass. Assign an owner, supported-version matrix and rollback package.
 
-## Staged adoption
+For restricted/offline environments, use [manual setup](manual-setup.md). Do not bypass script policies. Windows ARM64, alternative shells and company-specific restrictions require separate validation.
 
-1. **Review this draft.** Agree on skill behavior, instruction wording, index scope, and the initial tgrep version. Keep the initial state marked as unvalidated.
-2. **Run the pilot.** Complete the [validation plan](validation-plan.md) with representative solutions, including at least one large repository. Record both correctness and total task time.
-3. **Publish a reviewed revision.** Record the repository commit, supported Visual Studio builds, tgrep version, checksums, and known limitations. Approve or revise the performance claim based on measured results.
-4. **Distribute to a small team.** Use the same package employees will receive. Collect actual activation/fallback behavior and installation friction before expanding.
-5. **Expand and maintain.** Give one owner responsibility for reviewing upstream tgrep changes and keeping the skill, binary pin, and setup consistent. Keep a previous reviewed package available for rollback.
+## Why a rule plus a skill and helpers?
 
-## Why two instruction layers?
+The short rule expresses when to use tgrep. The skill contains the decision procedure. The helpers implement repeatable setup, argument quoting, bounded output and error capture. Employees install these together; they do not maintain independent rule sets.
 
-The small default instruction tells Copilot when to consider tgrep. The skill contains the operating procedure and loads when relevant. Both are installed together; employees do not maintain two independent sets of search rules.
+This arrangement influences tool selection. It does not replace Visual Studio's built-in search implementation or guarantee model obedience. Keep semantic IDE tools and unsaved editor context available.
 
-An installation makes the skill available. It does not guarantee a model will choose it for every task, replace a built-in tool implementation, or bypass higher-priority instructions. Validate observed behavior rather than treating file presence as adoption.
+Organization-wide instructions are optional, not a prerequisite. Confirm support in the exact company environment before relying on them. Local personal/repository discovery provides the documented baseline.
 
-## Organization-level instructions
+## Maintenance
 
-Do not make central GitHub organization instructions a prerequisite for this initial rollout. As checked on September 10, 2026, [Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio#use-organization-level-custom-instructions) describes their use in Visual Studio, while [GitHub's organization-instruction page](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-organization-instructions) limits its stated support to GitHub.com features.
-
-A future pilot can establish support in the company's exact environment and move the short preference there if useful. The documented local skill and instruction paths provide a concrete starting point independent of that discrepancy.
-
-## Scope of this first repository
-
-Included: one search skill, one default-instruction template, a per-user setup script, onboarding documentation, source attribution, and the next-stage validation plan.
-
-Deferred: runtime tests, measured performance results, company-wide distribution, automated update services, CI validation, and any separate Codex/Claude Code packaging. No MCP server or Visual Studio extension is required by this design.
+Review upstream changes before changing the version pin. Preserve tgrep 1.0.5 until a candidate passes the same checks. Publish sanitized results tied to the tested integration commit; do not upload proprietary corpora, identifiers or raw transcripts. Track installation, helper tests, engine measurements and complete agent acceptance separately.

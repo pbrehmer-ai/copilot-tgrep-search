@@ -9,3 +9,7 @@
 *.bak
 *.tmp
 artifacts/
+
+# Keep local benchmark inputs and unpublished output out of commits.
+*.private.json
+__pycache__/

@@ -3,7 +3,7 @@ name: tgrep-search
 description: Speed up repeated repository-wide text, literal, regex, and searchable-file discovery with Microsoft tgrep in GitHub Copilot for Visual Studio on Windows. Use when locating code, strings, configuration, or candidate files across a solution's source tree. Preserve IDE tools for semantic references, renames, type information, and unsaved editor buffers.
 compatibility: Visual Studio 2026 18.5 or later, Copilot Agent mode with terminal access, Windows PowerShell 5.1 or later, and Microsoft tgrep 1.0.5 on PATH.
 metadata:
-  version: "0.1.0-draft"
+  version: "0.2.0-pilot"
   upstream-version: "1.0.5"
   upstream-agents-commit: "33675ce2342ad36bd080da3e1df91a863a22edbc"
 ---
@@ -19,6 +19,24 @@ Use tgrep to reduce repeated full-tree text scans. Reuse an index and a running 
 - Use editor context for unsaved changes. Neither an index nor `--no-index` can see unsaved buffers. Do not save the user's work just to make a search succeed.
 - Read a known file directly or search that file when the task is already narrow. Do not build an index just to inspect one file.
 - If tgrep is missing, incompatible, blocked, or fails, use available IDE search or ripgrep and briefly state the limitation. Do not install software or change policies as a side effect of an ordinary search request.
+
+## Fast path and terminal health
+
+Once per repository/session, establish the root, executable and completed server. Then spend tool calls on useful searches: batch independent filename queries, preserve the indexed root, inspect only selected current files, and do not repeat status/help/skill reads per query. Installing this skill does not create an index. For repeated broad searches, use the adjacent `scripts/Start-Repository.ps1 -Root '<source-root>'` when per-repository setup is authorized; it reuses a live server, adds a local Git exclusion if needed, and waits for initial completion. It supports only the default root-local index and tgrep 1.0.5. Preserve existing custom-index workflows instead of running this helper on them.
+
+If a terminal command finishes visibly but your tool stays pending or background output repeatedly says `running` with `0 lines`, treat it as a terminal integration failure. Allow at most one bounded output retrieval (about 30 seconds); then stop retrying this terminal workflow and use available IDE search, explaining the limitation. Never invent a result from an unavailable tool response. Autopilot removes approval pauses but did not fix this failure in the pilot. A search wrapper cannot repair Visual Studio's output channel. Do not change terminal profiles, execution policies or permissions to make an ordinary search succeed.
+
+## Batched filename discovery helper
+
+Prefer the adjacent `scripts/Search.ps1` for several independent filename queries, counts or large result sets. Resolve it relative to the SKILL.md you actually loaded; a personal installation normally uses the following path. Run in the terminal's existing approved PowerShell host, without spawning another PowerShell just for each search:
+
+```powershell
+& "$env:USERPROFILE\.copilot\skills\tgrep-search\scripts\Search.ps1" -Root '<source-root>' -Pattern 'OrderService','InvoiceService' -Glob '*.cs','!**/bin/**','!**/obj/**','!**/.git/**','!**/.vs/**' -MaxPaths 10
+```
+
+Replace the example patterns, root and filters with the task's scope. `-Pattern` is literal and case-sensitive by default; add `-Regex` only for regex searches. `-NoIndex` requests a current saved-file scan. Do not add language/build exclusions that would hide files requested by the user. The helper captures the full filename output but returns at most `MaxPaths` paths per query, plus `ReturnedPathCount`, `PathsTruncated`, `ExitCode`, `Stderr` and `TimedOut`. Partial or error results are not exhaustive counts. It launches no server and does not certify that the index was used: inspect stderr for scan fallback warnings. Native no-match exit 1 is recorded in JSON while the helper itself exits 0 for successful queries; helper exit 2 means a query failed or timed out. The 30-second per-client timeout stops only its own search process, not the shared server; remaining queries are skipped after timeout.
+
+For a single small search or content inspection, invoking tgrep directly avoids helper serialization overhead. Keep stderr visible and read `$LASTEXITCODE` immediately after EACH native search, before counting/piping output or running another command. Never append `2>$null`; a returned match does not erase other errors. Use paths/line numbers for content output. Scripts blocked by company policy are unavailable: use the direct executable with the same error rules or IDE tools, without a policy bypass.
 
 ## Establish the root once
 
@@ -36,7 +54,7 @@ At the first broad search in a repository/session, locate the executable and ins
 ```powershell
 $tgrepExe = Join-Path $env:LOCALAPPDATA 'Programs\copilot-tgrep\1.0.5\tgrep.exe'
 if (-not (Test-Path -LiteralPath $tgrepExe -PathType Leaf)) {
-    $tgrepExe = (Get-Command tgrep -CommandType Application -ErrorAction Stop).Source
+    $tgrepExe = (Get-Command tgrep -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
 }
 & $tgrepExe --version
 & $tgrepExe status .
@@ -48,7 +66,7 @@ Inspect the status **text**, not just its exit code. `status` can succeed while 
 
 - **Suitable server already running:** reuse it. Do not start another server or rebuild before each query.
 - **No suitable server, repeated broad searches expected:** start one if background processes and local index writes are allowed for this task. Starting a server creates/updates `.tgrep`; keep it out of commits using the project's existing exclusion policy.
-- **One-off search with no suitable index/server, or background/index writes unavailable:** use a scoped `--no-index` scan or the available fallback. Do not spend time on setup for a small search.
+- **One-off search with no suitable index/server, or background/index writes unavailable:** prefer available ripgrep or IDE search for a scan; otherwise use scoped `--no-index`. The pilot found direct tgrep scans slower than ripgrep. Do not spend time on setup for a small search.
 - **A process cannot survive tool calls:** a completed `tgrep index .` can support repeated searches of unchanged files. It becomes stale after edits; use a direct scan for current results. Rebuilding the on-disk index does not refresh an already running server.
 
 For a default root-local index, the Windows background start is:
@@ -56,7 +74,7 @@ For a default root-local index, the Windows background start is:
 ```powershell
 $tgrepExe = Join-Path $env:LOCALAPPDATA 'Programs\copilot-tgrep\1.0.5\tgrep.exe'
 if (-not (Test-Path -LiteralPath $tgrepExe -PathType Leaf)) {
-    $tgrepExe = (Get-Command tgrep -CommandType Application -ErrorAction Stop).Source
+    $tgrepExe = (Get-Command tgrep -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
 }
 $tgrepProcess = Start-Process -FilePath $tgrepExe -ArgumentList @('serve', '.') -WorkingDirectory (Get-Location).Path -WindowStyle Hidden -PassThru
 $tgrepProcess.Id

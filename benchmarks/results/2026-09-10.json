@@ -1,0 +1,908 @@
+{
+  "date": "2026-09-10",
+  "tested_commit": "b5dca25dad65161020a678adab7458e35e943c46",
+  "tgrep_version": "1.0.5",
+  "ripgrep_version": "15.2.0",
+  "repeats": 7,
+  "query_count": 8,
+  "all_results_equal": true,
+  "evidence_note": "Anonymized measurements from the original local pilot. Complete path sets matched locally but are withheld with the private query text and corpus. This is a search-engine benchmark, not Copilot answer latency.",
+  "measurements": [
+    {
+      "query_id": "Q01",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 202.4836,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 318.5272,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 20.1329,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 214.3737,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 205.1457,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 21.5232,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 25.4377,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 208.9729,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 202.859,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 33.2053,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 27.156,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 207.4181,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 237.0321,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 25.6234,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 0,
+      "tool": "tgrep",
+      "ms": 332.8895,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 0,
+      "tool": "rg",
+      "ms": 210.1046,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 17.2174,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 202.515,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 200.5602,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 20.7806,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 21.2572,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 203.0724,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 228.9467,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 24.7699,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 29.7161,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 200.6909,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 200.8589,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 31.5285,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 20.5505,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 202.9809,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 1,
+      "tool": "rg",
+      "ms": 206.0413,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 1,
+      "tool": "tgrep",
+      "ms": 18.4119,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 221.1865,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 19.1343,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 17.7996,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 208.0293,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 205.1934,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 318.3906,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 32.2016,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 279.8855,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 205.5565,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 31.0766,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 46.4447,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 222.3668,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 207.8173,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 319.5868,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 2,
+      "tool": "tgrep",
+      "ms": 17.7233,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 2,
+      "tool": "rg",
+      "ms": 197.9048,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 18.3217,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 200.2621,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 224.5245,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 20.8196,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 19.1062,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 203.094,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 217.4719,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 27.9775,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 26.7425,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 200.5651,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 205.3467,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 25.8656,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 24.112,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 201.7727,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 3,
+      "tool": "rg",
+      "ms": 221.6778,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 3,
+      "tool": "tgrep",
+      "ms": 22.0257,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 202.132,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 18.5429,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 17.8728,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 198.3919,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 199.0341,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 20.1279,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 23.9225,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 210.7857,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 229.5181,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 336.9574,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 26.5605,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 205.2095,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 200.1192,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 19.1853,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 4,
+      "tool": "tgrep",
+      "ms": 21.9351,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 4,
+      "tool": "rg",
+      "ms": 200.2613,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 21.2196,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 199.7311,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 222.0412,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 17.6428,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 17.7019,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 206.9745,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 206.8284,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 29.5421,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 26.7752,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 207.1231,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 203.0263,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 29.2087,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 20.5688,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 196.2789,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 5,
+      "tool": "rg",
+      "ms": 225.639,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 5,
+      "tool": "tgrep",
+      "ms": 22.2461,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 202.2496,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q01",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 20.0703,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 19.2214,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q02",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 199.0051,
+      "file_count": 0,
+      "exit_code": 1
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 203.6018,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q03",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 16.7636,
+      "file_count": 19,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 28.2422,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q04",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 216.4986,
+      "file_count": 508,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 226.9022,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q05",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 29.15,
+      "file_count": 915,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 28.1865,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q06",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 239.9145,
+      "file_count": 921,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 217.0307,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q07",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 22.3569,
+      "file_count": 87,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 6,
+      "tool": "tgrep",
+      "ms": 23.9884,
+      "file_count": 150,
+      "exit_code": 0
+    },
+    {
+      "query_id": "Q08",
+      "repeat": 6,
+      "tool": "rg",
+      "ms": 203.0694,
+      "file_count": 150,
+      "exit_code": 0
+    }
+  ]
+}

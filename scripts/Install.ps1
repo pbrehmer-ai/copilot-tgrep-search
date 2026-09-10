@@ -11,7 +11,7 @@ Per-user Windows installation. No administrator rights or policy changes require
 This is a pilot installer; Copilot behavior and performance still need validation.
 #>
 [CmdletBinding(SupportsShouldProcess = $true)]
-param()
+param([string] $RepositoryRoot)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -42,6 +42,8 @@ $repository = Split-Path -Parent $PSScriptRoot
 $skillSource = Join-Path $repository '.github\skills\tgrep-search\SKILL.md'
 $instructionSource = Join-Path $repository 'instructions\copilot-tgrep.md'
 $noticeSource = Join-Path $repository 'THIRD_PARTY_NOTICES.md'
+$helperSources = @(Get-ChildItem -LiteralPath (Join-Path $repository '.github\skills\tgrep-search\scripts') -Filter '*.ps1' -File)
+if ($helperSources.Count -ne 3) { throw 'Expected the three reviewed skill helper scripts.' }
 foreach ($source in @($skillSource, $instructionSource, $noticeSource)) {
     if (-not (Test-Path -LiteralPath $source -PathType Leaf)) { throw "Source file missing: $source" }
 }
@@ -210,6 +212,10 @@ try {
     Install-Bytes $executable ([IO.File]::ReadAllBytes($extractedPath)) 'tgrep.exe.before'
     Install-Bytes $skillDestination ([IO.File]::ReadAllBytes($skillSource)) 'SKILL.md.before'
     Install-Bytes $noticeDestination ([IO.File]::ReadAllBytes($noticeSource)) 'THIRD_PARTY_NOTICES.md.before'
+    foreach ($helper in $helperSources) {
+        $helperDestination = Join-Path (Split-Path -Parent $skillDestination) ('scripts\' + $helper.Name)
+        Install-Bytes $helperDestination ([IO.File]::ReadAllBytes($helper.FullName)) ($helper.Name + '.before')
+    }
     Install-Bytes $instructionDestination $instructionBytes 'copilot-instructions.md.before'
     if ($newUserPath -cne $originalUserPath) {
         [Environment]::SetEnvironmentVariable('Path', $newUserPath, 'User')
@@ -218,6 +224,7 @@ try {
     Save-Recovery
     Write-Host "Files installed, including Microsoft tgrep $version; functional validation pending. No server was started or test run."
     Write-Host 'Completely restart Visual Studio and terminals to pick up the user PATH, then follow the README.'
+    Write-Host 'For repeated searches, run scripts\Start-Repository.ps1 -Root <source-root> once per repository/session.'
     Write-Host "Recovery manifest and original files: $backupDirectory"
     Write-Host "Verified download retained for inspection: $stagingDirectory"
 }
@@ -226,4 +233,8 @@ catch {
     Save-Recovery
     Write-Warning "Setup did not complete. Review $manifestPath before retrying or restoring; partial changes may exist."
     throw
+}
+if ($RepositoryRoot) {
+    # Installation has its own recovery record; repository preparation is a separate operation.
+    & (Join-Path $PSScriptRoot 'Start-Repository.ps1') -Root $RepositoryRoot
 }
