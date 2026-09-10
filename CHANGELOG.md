@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0-pilot
+
+- Add SETUP.md with one Copilot installation task, authenticated private-repository fallback, terminal control, supplied-script installation and restart handoff.
+- Shorten the skill and persistent preference; install a conditional advanced reference with backups.
+- Emit compact JSON with full MatchFileCount, null on errors, and normalized OrdinalIgnoreCase-sorted samples. Default to five paths, support zero for counts, and cap oversized requests at 1000.
+- Document Results explicitly and discourage repeated schema discovery, output expansion and unnecessary direct scans. Preserve current-file verification requirements.
+- Combine initial readiness and discovery with optional -CheckReady; return no queries for an unready server. Reuse readiness afterwards.
+- Add a read-only Check-Setup.ps1 for installed-package/version/server checks; reject invalid or nested source roots before installation writes.
+- Extend isolated helper checks for sampling, sorting, compact output, errors and installed-file mismatch detection. Ready for a next-machine trial; no new Copilot token or performance improvement is claimed.
+
 ## Token benchmark report — 10 September 2026
 
 - Publish 33 completed Copilot attempts, with the headline based on two complete balanced repetitions: 89.54% more model tokens with the tested integration. Retain failed and unmatched attempts separately.

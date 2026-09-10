@@ -2,6 +2,8 @@
 
 ## Current evidence
 
+Version 0.3.0-pilot adds compact sorted samples, full counts independent of sample size, safe sample caps, a shorter entry point, a conditional reference, SETUP.md and a read-only package check. The isolated helper fixture verifies these behaviors and detects stale installed files. No new long Copilot benchmark was run. The first end-to-end test of this revision belongs on the next machine; do not reuse 0.2.0's measurements as its result.
+
 The later [token benchmark](token-benchmark-results.md) tested b6f6be5 under PowerShell 7.6.5 and collected 33 completed attempts before the user stopped further testing. Its two complete balanced repetitions showed token overhead, not savings. The same-chat follow-up and remaining three skill tasks were not run. This does not complete the installer or rollout matrix.
 
 The original Windows x64 pilot tested integration commit b5dca25dad65161020a678adab7458e35e943c46. Installation, discovery and engine equivalence passed; complete Copilot execution failed. See [results](benchmark-results.md). The revised helper tests are separate from that corpus benchmark.

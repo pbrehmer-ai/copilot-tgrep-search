@@ -10,7 +10,9 @@ tgrep uses a trigram index to identify likely candidate files before searching t
 
 | Decision | Reason |
 | --- | --- |
-| One `tgrep-search/SKILL.md` with adjacent helpers | Copilot can follow the procedure without fetching documentation; helpers preserve native results and automate repository preparation. |
+| Short `tgrep-search/SKILL.md` with adjacent helpers and conditional reference | The common schema fits in one read; uncommon details load only when required. Helpers preserve native results and automate repository preparation. |
+| Counts and sorted samples in compact JSON | Copilot need not retrieve hundreds of paths or rerun searches to count, sort or discover the schema. |
+| Explicit SETUP.md and installed-package check | An installation request uses reviewed scripts and verifies the copied files instead of reconstructing a skill from a GitHub page. |
 | Short default instruction | Skill discovery is conditional; the preference makes the intended search choice explicit without loading the full procedure on every request. |
 | Personal installation for the first rollout | One setup serves multiple projects and avoids editing every source repository. A repository-scoped option remains available. |
 | Pinned tgrep 1.0.5 | Documentation and executable behavior can be reviewed against the same release. |
@@ -26,6 +28,8 @@ tgrep uses a trigram index to identify likely candidate files before searching t
 Microsoft's [published benchmarks](https://github.com/microsoft/tgrep/blob/v1.0.5/BENCHMARKS.md) compare tgrep client/server searches against ripgrep over large repositories. Index creation happens before search timing. Those results support investigating this approach, but do not establish a speedup for this Visual Studio integration or for every solution.
 
 The [local pilot](benchmark-results.md) measured initial index cost and paired engine performance: 4.16x across all timed warm searches and 8.74x by summed per-query medians. It also established automatic skill loading and actual tgrep invocation. Complete Copilot answers failed acceptance because terminal results did not return reliably, including without tgrep. The new helpers do not constitute a fix for that output channel or a measured Copilot productivity multiplier.
+
+The later [0.2.0 token experiment](token-benchmark-results.md) completed with a PowerShell 7 profile and found token overhead. Version 0.3.0 addresses its observed repeated reads, helper argument/schema retries and oversized results. These are tested helper/design changes, not measured end-to-end savings. The next-machine trial uses [SETUP.md](../SETUP.md).
 
 ## Microsoft guide adaptations
 

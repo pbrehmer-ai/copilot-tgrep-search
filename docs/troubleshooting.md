@@ -34,7 +34,9 @@ In the later [token benchmark](token-benchmark-results.md), a temporary **PowerS
 | Initial indexing complete but edits missing | Watchers are asynchronous; use a scoped saved-file scan before decisive claims. Unsaved buffers require IDE context. |
 | .tgrep appears in Git status | Verify after index creation with `git status --short --untracked-files=all -- .tgrep`. A hidden folder or misleading check-ignore display is insufficient. |
 | Helper Succeeded false, stderr or timeout | Inspect the result. Partial paths are not exhaustive. Correct scope/options or fall back; never replace failure with a zero-match claim. |
-| PathsTruncated true | Only a subset is displayed. ReturnedPathCount is reliable only for a successful, correctly scoped, sufficiently fresh search. Narrow before requesting more output. |
+| PathsTruncated true | The displayed sample is limited; MatchFileCount still counts all matching files when Succeeded is true. Do not request every path just to count. Sorting precedes sampling; MaxPaths 3 returns the first three OrdinalIgnoreCase-sorted paths. |
+| Helper output/schema confusion | Use Results, not Queries. Version 0.3.0 emits compact JSON with MatchFileCount and sorted Paths. Do not rerun the query to discover those field names. Run scripts/Check-Setup.ps1 from the package checkout if old files may still be installed. |
+| Private repository URL cannot be read | Use authenticated Git clone or download the repository ZIP, then direct Copilot to the local SETUP.md. A Copilot subscription alone does not grant access to this private repository. |
 | No speed benefit | Verify server use and equivalent filters/output. Startup, extra model/tool calls and helper serialization can outweigh savings. |
 
 Keep source code, secrets, internal query strings and raw terminal transcripts out of support reports and this integration repository.

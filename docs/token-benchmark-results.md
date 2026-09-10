@@ -1,6 +1,8 @@
 # Copilot token benchmark — 10 September 2026
 
-**The tested integration increased token usage. It did not demonstrate token savings.** Across two complete A/B repetitions, the skill condition used **1.90× as many exported model tokens (+89.54%)** as standard Copilot. This measures the current integration and workload, not tgrep's intrinsic search efficiency or billing.
+**Historical scope:** these measurements apply to 0.2.0-pilot at b6f6be5. The later 0.3.0 candidate addresses the observed overhead and adds guided setup; its token benefit has not been measured. The original dataset and findings below remain unchanged.
+
+**The tested integration increased token usage. It did not demonstrate token savings.** Across two complete A/B repetitions, the skill condition used **1.90× as many exported model tokens (+89.54%)** as standard Copilot. This measures the 0.2.0 integration and workload, not tgrep's intrinsic search efficiency or billing.
 
 ## Scope and stopping point
 

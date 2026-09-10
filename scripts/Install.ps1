@@ -43,9 +43,22 @@ $skillSource = Join-Path $repository '.github\skills\tgrep-search\SKILL.md'
 $instructionSource = Join-Path $repository 'instructions\copilot-tgrep.md'
 $noticeSource = Join-Path $repository 'THIRD_PARTY_NOTICES.md'
 $helperSources = @(Get-ChildItem -LiteralPath (Join-Path $repository '.github\skills\tgrep-search\scripts') -Filter '*.ps1' -File)
+$referenceSource = Join-Path $repository '.github\skills\tgrep-search\references\advanced.md'
 if ($helperSources.Count -ne 3) { throw 'Expected the three reviewed skill helper scripts.' }
-foreach ($source in @($skillSource, $instructionSource, $noticeSource)) {
+foreach ($source in @($skillSource, $instructionSource, $noticeSource, $referenceSource)) {
     if (-not (Test-Path -LiteralPath $source -PathType Leaf)) { throw "Source file missing: $source" }
+}
+if ($RepositoryRoot) {
+    . (Join-Path $repository '.github\skills\tgrep-search\scripts\Process.ps1')
+    $RepositoryRoot = Resolve-SearchRoot $RepositoryRoot
+    $setupGit = Get-Command git -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
+    if ($setupGit) {
+        $rootProbe = Invoke-CapturedProcess $setupGit.Source @('rev-parse', '--show-toplevel') $RepositoryRoot 10
+        if ($rootProbe.TimedOut) { throw 'Source root check timed out; nothing installed.' }
+        if ($rootProbe.ExitCode -eq 0 -and [IO.Path]::GetFullPath($rootProbe.Stdout.Trim()).TrimEnd('\') -ine $RepositoryRoot.TrimEnd('\')) {
+            throw "Use the source repository root: $($rootProbe.Stdout.Trim()). Nothing installed."
+        }
+    }
 }
 $startMarker = '<!-- copilot-tgrep-search:start -->'
 $endMarker = '<!-- copilot-tgrep-search:end -->'
@@ -149,6 +162,7 @@ $stagingDirectory = Join-Path $env:TEMP "copilot-tgrep-search-$runId"
 [IO.Directory]::CreateDirectory($stagingDirectory) | Out-Null
 $recovery = [ordered]@{
     CreatedUtc = [DateTime]::UtcNow.ToString('o'); TgrepVersion = $version
+    IntegrationVersion = '0.3.0-pilot'
     OriginalUserPath = $originalUserPath; IntendedUserPath = $newUserPath
     Files = @(); Status = 'Preparing'; StagingDirectory = $stagingDirectory
 }
@@ -212,6 +226,8 @@ try {
     Install-Bytes $executable ([IO.File]::ReadAllBytes($extractedPath)) 'tgrep.exe.before'
     Install-Bytes $skillDestination ([IO.File]::ReadAllBytes($skillSource)) 'SKILL.md.before'
     Install-Bytes $noticeDestination ([IO.File]::ReadAllBytes($noticeSource)) 'THIRD_PARTY_NOTICES.md.before'
+    $referenceDestination = Join-Path (Split-Path -Parent $skillDestination) 'references\advanced.md'
+    Install-Bytes $referenceDestination ([IO.File]::ReadAllBytes($referenceSource)) 'advanced.md.before'
     foreach ($helper in $helperSources) {
         $helperDestination = Join-Path (Split-Path -Parent $skillDestination) ('scripts\' + $helper.Name)
         Install-Bytes $helperDestination ([IO.File]::ReadAllBytes($helper.FullName)) ($helper.Name + '.before')
@@ -222,9 +238,10 @@ try {
     }
     $recovery.Status = 'Installed'
     Save-Recovery
-    Write-Host "Files installed, including Microsoft tgrep $version; functional validation pending. No server was started or test run."
+    Write-Host "Personal files installed, including Microsoft tgrep $version. Repository preparation follows if -RepositoryRoot was supplied."
     Write-Host 'Completely restart Visual Studio and terminals to pick up the user PATH, then follow the README.'
     Write-Host 'For repeated searches, run scripts\Start-Repository.ps1 -Root <source-root> once per repository/session.'
+    Write-Host 'After preparation, run scripts\Check-Setup.ps1 -Root <source-root>. Then restart Visual Studio and check one complete Agent answer.'
     Write-Host "Recovery manifest and original files: $backupDirectory"
     Write-Host "Verified download retained for inspection: $stagingDirectory"
 }

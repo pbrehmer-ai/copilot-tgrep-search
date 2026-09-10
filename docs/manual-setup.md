@@ -19,7 +19,7 @@ Extract `tgrep.exe` to a stable directory and add that directory to your **user 
 
 1. Create `%USERPROFILE%\.copilot\skills\tgrep-search\`.
 2. Copy [SKILL.md](../.github/skills/tgrep-search/SKILL.md) into that folder, keeping the exact uppercase filename `SKILL.md`.
-3. Copy [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and the complete [scripts folder](../.github/skills/tgrep-search/scripts) into the skill folder. Keep all three helpers together: Process.ps1, Search.ps1 and Start-Repository.ps1.
+3. Copy [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md), the complete [scripts folder](../.github/skills/tgrep-search/scripts) and [references folder](../.github/skills/tgrep-search/references) into the skill folder. Keep all three helpers together: Process.ps1, Search.ps1 and Start-Repository.ps1, plus references/advanced.md.
 4. Back up `%USERPROFILE%\copilot-instructions.md` if it exists. Add the full contents of [copilot-tgrep.md](../instructions/copilot-tgrep.md), including its start/end markers. Create the file if absent. If the marked section already exists, replace that section instead of adding a duplicate. Keep everything outside it unchanged.
 5. In Visual Studio 2026 18.5+, enable custom instructions and use Copilot's **Agent** mode with the terminal tool available.
 
@@ -41,7 +41,7 @@ The setup script preserves unrelated instruction content and records previous fi
 
 1. Close Visual Studio before changing the setup. If a tgrep server was started for a pilot, identify the process and its repository before stopping it. Do not stop all tgrep processes indiscriminately; a server can be shared by multiple clients.
 2. Remove only the section between `<!-- copilot-tgrep-search:start -->` and `<!-- copilot-tgrep-search:end -->` from the personal instruction file. Preserve unrelated content and any edits made since installation.
-3. Remove the installed `tgrep-search` skill, its three helper scripts and notice if you no longer need them, or restore their preceding copies from the printed backup directory. Do not delete unrelated files in a shared skills directory.
+3. Remove the installed `tgrep-search` skill, its three helper scripts, advanced reference and notice if you no longer need them, or restore their preceding copies from the printed backup directory. Do not delete unrelated files in a shared skills directory.
 4. Remove this setup's executable directory from user PATH if it is no longer used. Remove the executable only when no other workflow depends on it. Existing tgrep installations are separate.
 5. To undo an installation, consult its recovery manifest and file backups. Restore the recorded PATH wholesale only if no unrelated PATH changes have occurred since; otherwise remove just this setup's entry.
 6. Restart Visual Studio. Index folders belong to their source repositories and are not deleted by removing the skill.
@@ -73,6 +73,6 @@ Wait for READY, then perform the README's minimal Copilot terminal check and act
 
 The preparation helper intentionally supports only the reviewed default `.tgrep` index at the actual source root. If your team already uses a custom index path, admission rules or server flags, preserve that setup and use the upstream commands with the SAME options for index, serve and search. Do not run the default helper alongside it. The batched search helper also uses only the default index and normal search filters; use direct tgrep calls for custom-index or advanced admission options.
 
-If helper scripts cannot run under company policy, IT can prepare a root-local server with the approved executable, or employees can use reviewed direct commands from SKILL.md. Complete initial indexing, exclude `.tgrep` through your version-control policy, and verify the same root's status. No script-policy change is required by this design.
+If helper scripts cannot run under company policy, IT can prepare a root-local server with the approved executable, or employees can use reviewed direct commands from [advanced.md](../.github/skills/tgrep-search/references/advanced.md). Complete initial indexing, exclude `.tgrep` through your version-control policy, and verify the same root's status. No script-policy change is required by this design.
 
 For a stuck terminal, see [troubleshooting](troubleshooting.md). A visible console result alone is not a passing Copilot round trip.

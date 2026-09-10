@@ -2,18 +2,20 @@
 
 ## Employee experience
 
+For the next-machine trial, give employees the short setup request in [README](../README.md). Copilot follows [SETUP.md](../SETUP.md), runs the supplied installer and checks the installed package. Employees still need repository access, a healthy terminal and one Visual Studio restart. Version 0.3.0 is a candidate for this trial; the previous token measurements apply to 0.2.0, not the new package.
+
 Distribute a reviewed revision with the pinned tgrep 1.0.5 executable: one personal installation, one preparation step for each source repository/session, then ordinary Copilot work. The combined installer option accepts the first source root. Indexes and servers are per source root; the skill is per user.
 
 The repository is private. Employees need read access or an approved internal package. A Copilot license alone does not grant repository access. Do not make it public to work around access management.
 
 ## Current gate
 
-The [engine pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results but failed complete agent execution with its original terminal profile. A later PowerShell 7 profile allowed complete attempts. However, the [token benchmark](token-benchmark-results.md) found **89.54% more model tokens** with the current integration and correctness failures. Company-wide deployment remains gated on representative quality and efficiency improvements, as well as clean onboarding acceptance. One successful completed answer is insufficient.
+The [engine pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results but failed complete agent execution with its original terminal profile. A later PowerShell 7 profile allowed complete attempts. However, the [0.2.0 token benchmark](token-benchmark-results.md) found **89.54% more model tokens** and correctness failures. Version 0.3.0 is ready for the next-machine trial, with no new end-to-end measurement. Company-wide deployment remains gated on representative quality and efficiency improvements, as well as clean onboarding acceptance.
 
 ## Distribution checklist
 
 1. Select the supported VS build, shell profile and model. Validate terminal initialization and a minimal command-to-chat round trip first.
-2. Review the skill, default rule and three adjacent helper scripts as one package. Check the pinned executable checksum. Distribute through existing IT tooling or the supplied installer; the installer downloads from GitHub and has no offline switch.
+2. Review the skill, conditional reference, default rule and three adjacent helper scripts as one package. Check the pinned executable checksum. Distribute through existing IT tooling or the supplied installer; the installer downloads from GitHub and has no offline switch.
 3. Confirm permission for local executable/index storage and a loopback server. Installation does not grant Copilot tool permissions. Autopilot is optional, not a prerequisite or a substitute for healthy tools.
 4. Prepare each repository's actual root; preserve custom index workflows and project exclusions. Verify local .tgrep exclusion after creation. Avoid duplicate personal/repository copies of the same skill.
 5. Run the [acceptance scenarios](validation-plan.md) on representative solutions. Include complete answers, fresh/negative checks, errors and repeated searches. Record model/tool overhead separately from engine latency.

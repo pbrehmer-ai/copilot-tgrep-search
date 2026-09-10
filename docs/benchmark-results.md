@@ -1,6 +1,6 @@
 # Pilot results: 10 September 2026
 
-This page preserves the earlier engine and terminal pilot. The later [Copilot token benchmark](token-benchmark-results.md) found a working PowerShell 7 terminal configuration but **89.54% higher model-token usage** with the current integration. Engine timings below are not token savings.
+This page preserves the earlier engine and terminal pilot. The later [Copilot token benchmark](token-benchmark-results.md) found a working PowerShell 7 terminal configuration but **89.54% higher model-token usage** with version 0.2.0. Engine timings below are not token savings; 0.3.0 has not been benchmarked end to end.
 
 ## What was measured
 
