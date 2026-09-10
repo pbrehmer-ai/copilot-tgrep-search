@@ -1,0 +1,11 @@
+# Search indexes and local editor state
+.tgrep/
+.vs/
+.vscode/
+
+# Local setup/download artifacts
+*.zip
+*.log
+*.bak
+*.tmp
+artifacts/
