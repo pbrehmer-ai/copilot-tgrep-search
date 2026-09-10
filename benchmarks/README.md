@@ -1,5 +1,13 @@
 # Reproduce the search-engine comparison
 
+The latest [Copilot optimization report](../docs/optimization-results.md) covers the capped [twelve-attempt protocol](optimization-protocol.md), versions 0.3.0 through 0.4.1, and a separate short engine check. Recalculate its paired model-token and workflow metrics with:
+
+```powershell
+python .\benchmarks\analyze_optimization.py .\benchmarks\results\2026-09-10-optimization.json
+```
+
+The sanitized data includes per-call usage and relative timing offsets. Private prompts and source remain local, so recalculating these figures does not independently reproduce answer correctness or the proprietary corpus. The final candidate did not meet the token-saving target.
+
 For actual Copilot model tokens, see the separate [token protocol](TOKEN_PROTOCOL.md), [results](../docs/token-benchmark-results.md) and [sanitized data](results/2026-09-10-tokens.json). The token pilot found overhead, not savings; do not infer tokens from the engine timings below.
 
 Python 3.9+ is required only for benchmarking. Employees do not need Python to use the skill. Use absolute executable paths to reviewed tgrep/ripgrep binaries.

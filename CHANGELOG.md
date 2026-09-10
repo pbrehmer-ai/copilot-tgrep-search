@@ -2,9 +2,10 @@
 
 ## 0.4.1-pilot
 
+- Publish all twelve optimization attempts and sanitized per-call usage. The final held-out pair was 1.14x faster but used 6.57% more tokens; the token-saving target was not met. See [results](docs/optimization-results.md).
 - Clarify that helper evidence already reads current saved contents. Avoid duplicate get_file calls over the same ranges and stop after the requested verified example.
 - Keep default evidence limits until a specific gap requires expansion.
-- This final wording adjustment follows the development comparison; evaluate it only on the held-out pair without extending the twelve-attempt budget.
+- This final wording adjustment followed the development comparison and was evaluated only on the held-out pair without extending the twelve-attempt budget.
 
 ## 0.4.0-pilot
 

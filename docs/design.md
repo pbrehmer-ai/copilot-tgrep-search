@@ -29,7 +29,9 @@ Microsoft's [published benchmarks](https://github.com/microsoft/tgrep/blob/v1.0.
 
 The [local pilot](benchmark-results.md) measured initial index cost and paired engine performance: 4.16x across all timed warm searches and 8.74x by summed per-query medians. It also established automatic skill loading and actual tgrep invocation. Complete Copilot answers failed acceptance because terminal results did not return reliably, including without tgrep. The new helpers do not constitute a fix for that output channel or a measured Copilot productivity multiplier.
 
-The later [0.2.0 token experiment](token-benchmark-results.md) completed with a PowerShell 7 profile and found token overhead. Version 0.3.0 addresses its observed repeated reads, helper argument/schema retries and oversized results. These are tested helper/design changes, not measured end-to-end savings. The next-machine trial uses [SETUP.md](../SETUP.md).
+The later [0.2.0 token experiment](token-benchmark-results.md) completed with a PowerShell 7 profile and found token overhead. The [optimization follow-up](optimization-results.md) separates version 0.3.0, the 0.4.0 implementation and the final 0.4.1 wording. It measures full exported model usage and orchestration time; it does not attribute all improvements to the native engine. The next-machine trial uses [SETUP.md](../SETUP.md).
+
+The 0.4 helper discovers candidate paths through the prepared index, then reads only selected files directly for current evidence. Limits apply to matches, surrounding lines and a shared source-text character budget. This can remove a model round-trip between discovering a file and seeing its relevant lines. Compact output removes routine metadata without discarding warnings. The skill distinguishes evidence that was already read from a missing range, and asks for the host's completion tool at the correct point to avoid a redundant Autopilot continuation. Both workflow changes can also benefit other search engines; the comparison tests the integration package, not a claim that tgrep intrinsically consumes fewer model tokens.
 
 ## Microsoft guide adaptations
 

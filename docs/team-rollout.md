@@ -2,7 +2,7 @@
 
 ## Employee experience
 
-For the next-machine trial, give employees the short setup request in [README](../README.md). Copilot follows [SETUP.md](../SETUP.md), runs the supplied installer and checks the installed package. Employees still need repository access, a healthy terminal and one Visual Studio restart. Version 0.3.0 is a candidate for this trial; the previous token measurements apply to 0.2.0, not the new package.
+For the next-machine trial, give employees the short setup request in [README](../README.md). Copilot follows [SETUP.md](../SETUP.md), runs the supplied installer and checks the installed package. Employees still need repository access, a healthy terminal and one Visual Studio restart. Version 0.4.1 is the current pilot candidate; its [measured results](optimization-results.md) do not establish token savings.
 
 Distribute a reviewed revision with the pinned tgrep 1.0.5 executable: one personal installation, one preparation step for each source repository/session, then ordinary Copilot work. The combined installer option accepts the first source root. Indexes and servers are per source root; the skill is per user.
 
@@ -10,7 +10,7 @@ The repository is private. Employees need read access or an approved internal pa
 
 ## Current gate
 
-The [engine pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results but failed complete agent execution with its original terminal profile. A later PowerShell 7 profile allowed complete attempts. However, the [0.2.0 token benchmark](token-benchmark-results.md) found **89.54% more model tokens** and correctness failures. Version 0.3.0 is ready for the next-machine trial, with no new end-to-end measurement. Company-wide deployment remains gated on representative quality and efficiency improvements, as well as clean onboarding acceptance.
+The [engine pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results but failed complete agent execution with its original terminal profile. A later PowerShell 7 profile allowed complete attempts. The [0.2.0 token benchmark](token-benchmark-results.md) found **89.54% more model tokens** and correctness failures. In the [0.4.1 held-out pair](optimization-results.md), both answers were correct and the workflow was **1.14x faster**, but consumed **6.57% more tokens**. These different experiments do not establish a causal reduction from 89.54% to 6.57%. Company-wide deployment for token savings remains unsupported; continue only with a small, explicitly evaluated pilot and clean onboarding acceptance.
 
 ## Distribution checklist
 

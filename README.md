@@ -2,7 +2,7 @@
 
 Use Microsoft tgrep for repeated code discovery in large **Visual Studio** solutions. One personal installation provides the skill, compact search helper and default preference across your projects.
 
-**0.3.0-pilot: ready for your next-machine trial.** This revision addresses observed Copilot retries and excessive output. Helper checks pass; its end-to-end Copilot behavior and token benefit have not yet been measured. The previous revision used **89.54% more tokens** in the balanced pilot. Keep that [result](docs/token-benchmark-results.md) separate from this new candidate and the earlier [4.16× warm engine speedup](docs/benchmark-results.md).
+**0.4.1-pilot: bounded source evidence and fewer redundant reads.** The search helper can return current, numbered excerpts together with indexed candidate discovery. The final two-task comparison was **1.14× faster end to end but used 6.57% more model tokens** than the ripgrep workflow; the token-saving target was not met. See the [Copilot optimization results](docs/optimization-results.md) for all twelve attempts and limitations. Keep these separate from the historical [89.54% token overhead](docs/token-benchmark-results.md) and [4.16× warm engine speedup](docs/benchmark-results.md).
 
 ## Easiest setup: give Copilot this task
 
@@ -46,7 +46,15 @@ For another repository, or after its server has stopped, run the installed helpe
 
 One server is reused per source root. No login service or scheduled task is installed. Initial indexing has a disk/memory and time cost; ordinary IDE/ripgrep search remains appropriate for small one-off scans. The helpers use the pinned executable's absolute path, so their calls do not depend on PATH propagation.
 
-## What changed for 0.3.0
+## What changed for 0.4.1
+
+- `-IncludeContext` combines indexed discovery with current line-numbered excerpts from sampled files in one Copilot tool call.
+- Source output has a shared character budget; missing context and errors remain visible. Read additional ranges only when necessary.
+- `-Compact` removes routine diagnostic metadata while preserving counts, samples and warnings.
+- The skill explicitly reuses current excerpts and completes the host's task-completion step before the final answer.
+- A twelve-attempt optimization pilot retains intermediate failures and evaluates the final wording on separate held-out tasks.
+
+The earlier 0.3.0 improvements remain:
 
 - A short skill entry point and preference; advanced rules load only when needed.
 - Full matching-file counts plus five sample paths by default; zero paths for counts only.
@@ -70,6 +78,6 @@ The installer updates user PATH and records its previous value. Index preparatio
 
 ## Documentation
 
-[Agent setup](SETUP.md) · [Manual setup and rollback](docs/manual-setup.md) · [Troubleshooting](docs/troubleshooting.md) · [Team rollout](docs/team-rollout.md) · [Validation](docs/validation-plan.md) · [Token results](docs/token-benchmark-results.md) · [Engine results](docs/benchmark-results.md) · [Design](docs/design.md) · [Changelog](CHANGELOG.md)
+[Agent setup](SETUP.md) · [Manual setup and rollback](docs/manual-setup.md) · [Troubleshooting](docs/troubleshooting.md) · [Team rollout](docs/team-rollout.md) · [Validation](docs/validation-plan.md) · [Optimization results](docs/optimization-results.md) · [Earlier token results](docs/token-benchmark-results.md) · [Engine results](docs/benchmark-results.md) · [Design](docs/design.md) · [Changelog](CHANGELOG.md)
 
 This is an independent integration using [Microsoft tgrep](https://github.com/microsoft/tgrep), not an official Visual Studio extension. Microsoft documents [personal Copilot skills](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-agent-skills?view=visualstudio) and [user-level preferences](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=visualstudio). See [third-party notices](THIRD_PARTY_NOTICES.md).
