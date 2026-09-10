@@ -61,6 +61,19 @@ try {
     $countOnly = $countOnlyText | ConvertFrom-Json
     Assert ($countOnly.Results[0].MatchFileCount -eq 3 -and $countOnly.Results[0].Paths.Count -eq 0 -and $countOnly.Results[0].PathsTruncated) 'Counts-only mode failed'
     Assert ($countOnlyText -notmatch '[\r\n]') 'Output is not compact JSON'
+    $contextText = & (Join-Path $helpers 'Search.ps1') -Root $fixture -Pattern 'OrderService' -Glob '*.cs','!**/bin/**' -MaxPaths 2 -Compact -IncludeContext
+    $context = $contextText | ConvertFrom-Json
+    Assert ($context.Results[0].MatchFileCount -eq 3 -and $context.Results[0].Evidence.Count -eq 2) 'Bounded evidence changed discovery count/sample'
+    Assert ($context.Results[0].Evidence[0].MatchLines[0] -eq 1 -and $context.Results[0].Evidence[0].Lines[0] -ceq '1: OrderService') 'Current evidence lost line numbers or text'
+    Assert ($contextText.Length -lt 1800 -and $contextText -notmatch 'Executable|ElapsedMs|ReturnedPathCount') 'Compact mode includes redundant diagnostics'
+    [IO.File]::WriteAllText((Join-Path $fixture 'one.cs'), ('OrderService' + ('x' * 200)), $utf8)
+    $limited = (& (Join-Path $helpers 'Search.ps1') -Root $fixture -Pattern 'OrderService' -Glob '*.cs','!**/bin/**' -MaxPaths 1 -Compact -IncludeContext -MaxEvidenceChars 100) | ConvertFrom-Json
+    Assert ($limited.Results[0].EvidenceTruncated -and $limited.Results[0].Evidence[0].Lines.Count -eq 0) 'Oversized source line escaped evidence budget'
+    [IO.File]::WriteAllText((Join-Path $fixture 'one.cs'), "OrderService`nchanged-current-context`n", $utf8)
+    $updatedContext = (& (Join-Path $helpers 'Search.ps1') -Root $fixture -Pattern 'OrderService' -Glob '*.cs','!**/bin/**' -MaxPaths 1 -Compact -IncludeContext) | ConvertFrom-Json
+    Assert ($updatedContext.Results[0].Evidence[0].Lines -contains '2: changed-current-context') 'Evidence did not read current disk contents'
+    $compactBad = (& (Join-Path $helpers 'Search.ps1') -Root $fixture -Pattern '[' -Regex -Compact -IncludeContext) | ConvertFrom-Json
+    Assert (-not $compactBad.Results[0].Succeeded -and $null -eq $compactBad.Results[0].MatchFileCount -and $compactBad.Results[0].Stderr) 'Compact mode hides native errors'
     $oversized = (& (Join-Path $helpers 'Search.ps1') -Root $fixture -Pattern 'OrderService' -Glob '*.cs','!**/bin/**' -MaxPaths 100000) | ConvertFrom-Json
     Assert ($oversized.PathLimit -eq 1000 -and $oversized.Results[0].MatchFileCount -eq 3) 'Oversized sample request was not safely capped'
     $bad = (& (Join-Path $helpers 'Search.ps1') -Root $fixture -Pattern '[' -Regex) | ConvertFrom-Json

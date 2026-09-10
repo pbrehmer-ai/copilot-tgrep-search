@@ -44,7 +44,7 @@ else {
 }
 $installationReady = $issues.Count -eq 0
 [pscustomobject]@{
-    IntegrationVersion = '0.3.0-pilot'; Root = $resolved; TgrepVersion = $versionText
+    IntegrationVersion = '0.4.0-pilot'; Root = $resolved; TgrepVersion = $versionText
     InstallationMatchesCheckout = $installationReady; ServerInitiallyReady = [bool]$serverReady
     ReadyForChatCheck = ($installationReady -and $serverReady); Issues = @($issues.ToArray())
     NextStep = 'Restart Visual Studio if just installed. In a fresh Agent chat, verify skill activation, an actual query and a completed answer. Initial readiness does not prove freshness or indexed execution.'

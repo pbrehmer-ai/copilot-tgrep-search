@@ -36,3 +36,9 @@ If the terminal has returned to its prompt but Copilot cannot receive the result
 `--json` uses line-delimited records. Invalid UTF-8 is repaired in `lines.text`, so use a byte-preserving alternative if original bytes are required.
 
 Adapted from the existing integration guide and [Microsoft's tgrep 1.0.5 agent guide](https://github.com/microsoft/tgrep/blob/v1.0.5/AGENTS.md). See the installed THIRD_PARTY_NOTICES.md. No upstream fetch is needed for ordinary use.
+
+## Bounded current evidence
+
+`Search.ps1 -Compact -IncludeContext` keeps root discovery eligible for the warm index, then runs direct, bounded content searches on only the sampled files. Defaults: two matching lines per file, six context lines each side, 6000 numbered source characters across the batch. JSON metadata and paths are outside that character budget. `EvidenceTruncated` means the source-character budget omitted lines; even false does not mean all occurrences or a complete method were returned. `MatchLines` identifies returned matching lines. An empty excerpt can mean the indexed candidate no longer matches. Read a targeted range if a body or relationship extends beyond the excerpt. Preserve `EvidenceErrors`; content failures return exit 2 without converting a successful discovery count into a false zero.
+
+`-Compact` removes routine executable paths, timings, duplicate counts and empty error fields. It preserves `Results`, counts, samples, truncation and any errors/warnings. Omit it for the full compatibility/diagnostic schema. `-MaxPaths 0` with context returns counts only; it reads no source files.

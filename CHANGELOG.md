@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0-pilot
+
+- Add optional current source evidence to the first indexed discovery call: numbered matches, bounded context, a shared source-character budget and explicit truncation/errors.
+- Add `-Compact` to omit routine metadata while retaining counts, sorted samples and warnings; retain the previous diagnostic schema when omitted.
+- Shorten the skill, request evidence before explanation, and guide targeted follow-up reads instead of large reads starting at line 1.
+- Complete the host's required task-completion step before the final answer to avoid redundant Autopilot continuations.
+- Add focused helper checks and a capped Copilot optimization protocol. Results are documented separately from historical engine-only and token measurements.
+
 ## 0.3.0-pilot
 
 - Add SETUP.md with one Copilot installation task, authenticated private-repository fallback, terminal control, supplied-script installation and restart handoff.
