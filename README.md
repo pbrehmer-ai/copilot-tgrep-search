@@ -1,10 +1,12 @@
 # tgrep Search for GitHub Copilot
 
-Faster repeated code searches in large Visual Studio solutions, using [Microsoft tgrep](https://github.com/microsoft/tgrep), a reusable Copilot skill, and a local index.
+An experimental integration for repeated code searches in large Visual Studio solutions, using [Microsoft tgrep](https://github.com/microsoft/tgrep), a reusable Copilot skill, and a local index.
+
+**Token benchmark: no savings demonstrated.** In 24 attempts across two complete A/B repetitions, the current skill used **1.90× as many model tokens (+89.54%)** as standard Copilot. Nine additional attempts are retained separately. Copilot often bypassed the index and retried helper calls. See [token results and follow-up priorities](docs/token-benchmark-results.md).
 
 **Measured search-engine benefit: 4.16× faster than ripgrep** across 56 warm searches per tool on a real 7,389-file C# workload, with identical result sets. The median-based aggregate was 8.74×. **These are not full Copilot answer speedups.** The pilot verified automatic skill loading and tgrep execution, but Visual Studio's terminal output/completion channel stalled even under Autopilot and without tgrep. See [results and limitations](docs/benchmark-results.md).
 
-**Status: improved pilot, not yet approved for company-wide rollout.** Installation and engine behavior were exercised on Windows x64. The revised helpers have separate automated checks; a complete Copilot acceptance run is still required on each supported Visual Studio configuration.
+**Status: experimental pilot, not approved for company-wide rollout.** A later PowerShell 7 profile allowed complete Copilot attempts, but the token comparison exposed overhead and correctness failures. Installation, engine behavior, helper checks and complete agent behavior remain separate acceptance gates.
 
 ## Start here
 
@@ -80,6 +82,7 @@ Employees run setup; they do not maintain several instructions manually. The sho
 | Need | Read |
 | --- | --- |
 | Measurements, method and caveats | [Benchmark results](docs/benchmark-results.md) |
+| Actual Copilot tokens and observed overhead | [Token benchmark](docs/token-benchmark-results.md), [protocol](benchmarks/TOKEN_PROTOCOL.md) |
 | Diagnose setup or a stuck Copilot terminal | [Troubleshooting](docs/troubleshooting.md) |
 | Exact agent behavior | [Skill](.github/skills/tgrep-search/SKILL.md), [default instruction](instructions/copilot-tgrep.md) |
 | Manual install, update, rollback | [Manual setup](docs/manual-setup.md) |

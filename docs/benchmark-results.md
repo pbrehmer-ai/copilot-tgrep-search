@@ -1,5 +1,7 @@
 # Pilot results: 10 September 2026
 
+This page preserves the earlier engine and terminal pilot. The later [Copilot token benchmark](token-benchmark-results.md) found a working PowerShell 7 terminal configuration but **89.54% higher model-token usage** with the current integration. Engine timings below are not token savings.
+
 ## What was measured
 
 A real Windows x64 source tree with **91 projects**, **7,389 eligible C# files** and **78.45 MiB** of C# content. The server indexed 14,562 eligible text files overall; the measured queries were restricted to C#. Visual Studio Enterprise 2026 executable version: **18.9.12112.369**. Copilot: **GPT-5.6 Luna**, initially Agent/Interactive and later Autopilot for diagnostics. tgrep: **1.0.5**; ripgrep: **15.2.0**.

@@ -1,5 +1,13 @@
 # Changelog
 
+## Token benchmark report — 10 September 2026
+
+- Publish 33 completed Copilot attempts, with the headline based on two complete balanced repetitions: 89.54% more model tokens with the tested integration. Retain failed and unmatched attempts separately.
+- Document actual per-model token telemetry, cache accounting, parser tests, reproducible statistics and privacy limitations.
+- Record the working PowerShell 7 terminal profile and restoration of original settings. No universal terminal fix is claimed.
+- Document helper retries, repeated skill reads and direct scans. Keep the tested skill and helpers unchanged; no token-saving optimization is claimed without a new comparison.
+- Stop further benchmarking at the user's request; the same-chat follow-up remains unperformed.
+
 ## 0.2.0-pilot
 
 - Incorporate the 10 September 2026 Windows x64 pilot, including unsuccessful complete Copilot runs and slower non-indexed scans.

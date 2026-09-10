@@ -1,5 +1,7 @@
 # Reproduce the search-engine comparison
 
+For actual Copilot model tokens, see the separate [token protocol](TOKEN_PROTOCOL.md), [results](../docs/token-benchmark-results.md) and [sanitized data](results/2026-09-10-tokens.json). The token pilot found overhead, not savings; do not infer tokens from the engine timings below.
+
 Python 3.9+ is required only for benchmarking. Employees do not need Python to use the skill. Use absolute executable paths to reviewed tgrep/ripgrep binaries.
 
 Create a **local, uncommitted** JSON query list (for example `queries.private.json`) containing representative literal strings, including positive and negative queries. Keep source revision, filters, tool versions and machine details locally. Default filters match the pilot's C# scope; repeated `--glob` arguments replace the complete default filter list.

@@ -1,0 +1,5960 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-10",
+  "completed_repetitions": 2,
+  "stopping_rule": "User requested no more tests during B3-T03. Finished that attempt; 33 recorded, 24 in two complete balanced repetitions, nine additional attempts retained. No same-chat follow-up performed.",
+  "environment": {
+    "visual_studio": "18.9.12112.369",
+    "model": "gpt-5.6-luna",
+    "mode": "Agent / Autopilot",
+    "shell": "PowerShell 7.6.5 -NoLogo -NoProfile",
+    "tgrep": "1.0.5",
+    "ripgrep": "15.2.0",
+    "projects": 91,
+    "eligible_csharp_files": 7389,
+    "source_bytes": 82265218,
+    "integration_commit": "b6f6be55dc041f55f75e9690b90eecf201720d87"
+  },
+  "measurement": "Exported per-model input + output tokens. Cache input is a subset. Reasoning breakdown unavailable in selected spans. All attempts and Autopilot follow-ups included; not billing.",
+  "primary_order": [
+    "A1",
+    "B1",
+    "B2",
+    "A2",
+    "A3",
+    "B3"
+  ],
+  "tasks": {
+    "T01": "Rare literal: exact file count and first three alphabetically sorted paths",
+    "T02": "Common literal: exact file count and first three alphabetically sorted paths",
+    "T03": "Three independent literals: counts and two example paths each",
+    "T04": "Explain a declaration/use relationship using two current source files and line citations",
+    "T05": "Verify literal absence against current saved C# files",
+    "T06": "Search one known saved file; the chosen literal is absent"
+  },
+  "privacy": "Private queries, corpus paths, source, prompts, responses, identifiers and absolute timestamps withheld.",
+  "runs": [
+    {
+      "run_id": "A1-T01",
+      "status": "passed",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "input_tokens": 45483,
+      "output_tokens": 467,
+      "cached_input_tokens": 33894,
+      "reasoning_tokens": null,
+      "total_tokens": 45950,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10988,
+          "output_tokens": 341,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11378,
+          "output_tokens": 103,
+          "cached_input_tokens": 10985,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "chat",
+          "input_tokens": 11543,
+          "output_tokens": 14,
+          "cached_input_tokens": 11375,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11574,
+          "output_tokens": 9,
+          "cached_input_tokens": 11534,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A1-T02",
+      "status": "passed",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "input_tokens": 45827,
+      "output_tokens": 566,
+      "cached_input_tokens": 44566,
+      "reasoning_tokens": null,
+      "total_tokens": 46393,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10987,
+          "output_tokens": 395,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11463,
+          "output_tokens": 148,
+          "cached_input_tokens": 10984,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "chat",
+          "input_tokens": 11673,
+          "output_tokens": 14,
+          "cached_input_tokens": 11460,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11704,
+          "output_tokens": 9,
+          "cached_input_tokens": 11664,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A1-T03",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 59489,
+      "output_tokens": 921,
+      "cached_input_tokens": 56922,
+      "reasoning_tokens": null,
+      "total_tokens": 60410,
+      "tool_counts": {
+        "get_file": 1,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10998,
+          "output_tokens": 247,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11562,
+          "output_tokens": 372,
+          "cached_input_tokens": 10995,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 12074,
+          "output_tokens": 276,
+          "cached_input_tokens": 10995,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 12412,
+          "output_tokens": 14,
+          "cached_input_tokens": 12071,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 12443,
+          "output_tokens": 12,
+          "cached_input_tokens": 12403,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A1-T04",
+      "status": "passed",
+      "model_calls": 7,
+      "tool_calls": 6,
+      "input_tokens": 92193,
+      "output_tokens": 928,
+      "cached_input_tokens": 83208,
+      "reasoning_tokens": null,
+      "total_tokens": 93121,
+      "tool_counts": {
+        "get_file": 4,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11006,
+          "output_tokens": 153,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11476,
+          "output_tokens": 190,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 12560,
+          "output_tokens": 125,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 13819,
+          "output_tokens": 146,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 14199,
+          "output_tokens": 290,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 14551,
+          "output_tokens": 14,
+          "cached_input_tokens": 14196,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 13,
+          "operation": "chat",
+          "input_tokens": 14582,
+          "output_tokens": 10,
+          "cached_input_tokens": 14542,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A1-T05",
+      "status": "passed",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "input_tokens": 45431,
+      "output_tokens": 450,
+      "cached_input_tokens": 44311,
+      "reasoning_tokens": null,
+      "total_tokens": 45881,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11006,
+          "output_tokens": 287,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11330,
+          "output_tokens": 140,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "chat",
+          "input_tokens": 11532,
+          "output_tokens": 14,
+          "cached_input_tokens": 11327,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11563,
+          "output_tokens": 9,
+          "cached_input_tokens": 11523,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A1-T06",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 4,
+      "input_tokens": 66977,
+      "output_tokens": 431,
+      "cached_input_tokens": 61206,
+      "reasoning_tokens": null,
+      "total_tokens": 67408,
+      "tool_counts": {
+        "get_file": 3,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10972,
+          "output_tokens": 91,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 12665,
+          "output_tokens": 227,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 14335,
+          "output_tokens": 90,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 14487,
+          "output_tokens": 14,
+          "cached_input_tokens": 14332,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 14518,
+          "output_tokens": 9,
+          "cached_input_tokens": 14478,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B1-T01",
+      "status": "passed",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "input_tokens": 104185,
+      "output_tokens": 982,
+      "cached_input_tokens": 78135,
+      "reasoning_tokens": null,
+      "total_tokens": 105167,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11408,
+          "output_tokens": 112,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13190,
+          "output_tokens": 66,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15083,
+          "output_tokens": 371,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15520,
+          "output_tokens": 147,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16101,
+          "output_tokens": 263,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 16426,
+          "output_tokens": 14,
+          "cached_input_tokens": 16098,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 11,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 12,
+          "operation": "chat",
+          "input_tokens": 16457,
+          "output_tokens": 9,
+          "cached_input_tokens": 16417,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B1-T02",
+      "status": "passed",
+      "model_calls": 10,
+      "tool_calls": 8,
+      "input_tokens": 160663,
+      "output_tokens": 1713,
+      "cached_input_tokens": 126732,
+      "reasoning_tokens": null,
+      "total_tokens": 162376,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 5,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11407,
+          "output_tokens": 99,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13176,
+          "output_tokens": 65,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15068,
+          "output_tokens": 338,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15472,
+          "output_tokens": 163,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16701,
+          "output_tokens": 362,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 17121,
+          "output_tokens": 210,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 13,
+          "operation": "chat",
+          "input_tokens": 17514,
+          "output_tokens": 283,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 14,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 15,
+          "operation": "chat",
+          "input_tokens": 17903,
+          "output_tokens": 170,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 16,
+          "operation": "chat",
+          "input_tokens": 18135,
+          "output_tokens": 14,
+          "cached_input_tokens": 17900,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 17,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 18,
+          "operation": "chat",
+          "input_tokens": 18166,
+          "output_tokens": 9,
+          "cached_input_tokens": 18126,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B1-T03",
+      "status": "passed",
+      "model_calls": 6,
+      "tool_calls": 4,
+      "input_tokens": 88105,
+      "output_tokens": 1096,
+      "cached_input_tokens": 77253,
+      "reasoning_tokens": null,
+      "total_tokens": 89201,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11418,
+          "output_tokens": 102,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13190,
+          "output_tokens": 69,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15086,
+          "output_tokens": 631,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": true
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15904,
+          "output_tokens": 272,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 16238,
+          "output_tokens": 14,
+          "cached_input_tokens": 15901,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 16269,
+          "output_tokens": 8,
+          "cached_input_tokens": 16229,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B1-T04",
+      "status": "failed_quality",
+      "model_calls": 8,
+      "tool_calls": 9,
+      "input_tokens": 130008,
+      "output_tokens": 1530,
+      "cached_input_tokens": 115331,
+      "reasoning_tokens": null,
+      "total_tokens": 131538,
+      "tool_counts": {
+        "get_file": 6,
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11426,
+          "output_tokens": 273,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 13982,
+          "output_tokens": 102,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15911,
+          "output_tokens": 285,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16631,
+          "output_tokens": 307,
+          "cached_input_tokens": 15908,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 17304,
+          "output_tokens": 207,
+          "cached_input_tokens": 15908,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 13,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 14,
+          "operation": "chat",
+          "input_tokens": 17978,
+          "output_tokens": 333,
+          "cached_input_tokens": 15908,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 15,
+          "operation": "chat",
+          "input_tokens": 18372,
+          "output_tokens": 14,
+          "cached_input_tokens": 15908,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 16,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 17,
+          "operation": "chat",
+          "input_tokens": 18404,
+          "output_tokens": 9,
+          "cached_input_tokens": 17975,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B1-T05",
+      "status": "passed",
+      "model_calls": 6,
+      "tool_calls": 4,
+      "input_tokens": 87106,
+      "output_tokens": 884,
+      "cached_input_tokens": 76642,
+      "reasoning_tokens": null,
+      "total_tokens": 87990,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11426,
+          "output_tokens": 93,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13189,
+          "output_tokens": 63,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15079,
+          "output_tokens": 526,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15633,
+          "output_tokens": 179,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 15874,
+          "output_tokens": 14,
+          "cached_input_tokens": 15630,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 15905,
+          "output_tokens": 9,
+          "cached_input_tokens": 15865,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B1-T06",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 68118,
+      "output_tokens": 271,
+      "cached_input_tokens": 62683,
+      "reasoning_tokens": null,
+      "total_tokens": 68389,
+      "tool_counts": {
+        "get_file": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11392,
+          "output_tokens": 81,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13075,
+          "output_tokens": 87,
+          "cached_input_tokens": 11389,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 14458,
+          "output_tokens": 61,
+          "cached_input_tokens": 11389,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 14581,
+          "output_tokens": 14,
+          "cached_input_tokens": 14455,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 14612,
+          "output_tokens": 28,
+          "cached_input_tokens": 14572,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B2-T01",
+      "status": "passed",
+      "model_calls": 6,
+      "tool_calls": 4,
+      "input_tokens": 86266,
+      "output_tokens": 578,
+      "cached_input_tokens": 76592,
+      "reasoning_tokens": null,
+      "total_tokens": 86844,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11408,
+          "output_tokens": 111,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13189,
+          "output_tokens": 67,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15083,
+          "output_tokens": 281,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15413,
+          "output_tokens": 96,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 15571,
+          "output_tokens": 14,
+          "cached_input_tokens": 15410,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 15602,
+          "output_tokens": 9,
+          "cached_input_tokens": 15562,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B2-T02",
+      "status": "passed",
+      "model_calls": 10,
+      "tool_calls": 8,
+      "input_tokens": 162685,
+      "output_tokens": 1754,
+      "cached_input_tokens": 128863,
+      "reasoning_tokens": null,
+      "total_tokens": 164439,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 5,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11407,
+          "output_tokens": 83,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13160,
+          "output_tokens": 66,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15053,
+          "output_tokens": 318,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": true
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15537,
+          "output_tokens": 202,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 15805,
+          "output_tokens": 148,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 16901,
+          "output_tokens": 337,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 13,
+          "operation": "chat",
+          "input_tokens": 18178,
+          "output_tokens": 341,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 14,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 15,
+          "operation": "chat",
+          "input_tokens": 18673,
+          "output_tokens": 235,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 16,
+          "operation": "chat",
+          "input_tokens": 18970,
+          "output_tokens": 14,
+          "cached_input_tokens": 18670,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 17,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 18,
+          "operation": "chat",
+          "input_tokens": 19001,
+          "output_tokens": 10,
+          "cached_input_tokens": 18961,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B2-T03",
+      "status": "passed",
+      "model_calls": 10,
+      "tool_calls": 8,
+      "input_tokens": 167572,
+      "output_tokens": 2353,
+      "cached_input_tokens": 130746,
+      "reasoning_tokens": null,
+      "total_tokens": 169925,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 5,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11418,
+          "output_tokens": 108,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13196,
+          "output_tokens": 64,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15087,
+          "output_tokens": 351,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15504,
+          "output_tokens": 187,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16801,
+          "output_tokens": 565,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 17454,
+          "output_tokens": 193,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 13,
+          "operation": "chat",
+          "input_tokens": 18772,
+          "output_tokens": 616,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 14,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 15,
+          "operation": "chat",
+          "input_tokens": 19567,
+          "output_tokens": 242,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 16,
+          "operation": "chat",
+          "input_tokens": 19871,
+          "output_tokens": 14,
+          "cached_input_tokens": 19564,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 17,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 18,
+          "operation": "chat",
+          "input_tokens": 19902,
+          "output_tokens": 13,
+          "cached_input_tokens": 19862,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B2-T04",
+      "status": "passed",
+      "model_calls": 8,
+      "tool_calls": 7,
+      "input_tokens": 124875,
+      "output_tokens": 1298,
+      "cached_input_tokens": 103693,
+      "reasoning_tokens": null,
+      "total_tokens": 126173,
+      "tool_counts": {
+        "get_file": 4,
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11426,
+          "output_tokens": 116,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13212,
+          "output_tokens": 67,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15106,
+          "output_tokens": 212,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": true
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15484,
+          "output_tokens": 284,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16647,
+          "output_tokens": 221,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 12,
+          "operation": "chat",
+          "input_tokens": 17365,
+          "output_tokens": 375,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 13,
+          "operation": "chat",
+          "input_tokens": 17802,
+          "output_tokens": 14,
+          "cached_input_tokens": 17362,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 14,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 15,
+          "operation": "chat",
+          "input_tokens": 17833,
+          "output_tokens": 9,
+          "cached_input_tokens": 17793,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B2-T05",
+      "status": "passed",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "input_tokens": 106089,
+      "output_tokens": 1199,
+      "cached_input_tokens": 97733,
+      "reasoning_tokens": null,
+      "total_tokens": 107288,
+      "tool_counts": {
+        "get_file": 3,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11426,
+          "output_tokens": 158,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13254,
+          "output_tokens": 64,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15145,
+          "output_tokens": 52,
+          "cached_input_tokens": 11423,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15927,
+          "output_tokens": 526,
+          "cached_input_tokens": 15142,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16477,
+          "output_tokens": 376,
+          "cached_input_tokens": 15924,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 16914,
+          "output_tokens": 14,
+          "cached_input_tokens": 15924,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 11,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 12,
+          "operation": "chat",
+          "input_tokens": 16946,
+          "output_tokens": 9,
+          "cached_input_tokens": 16474,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B2-T06",
+      "status": "passed",
+      "model_calls": 6,
+      "tool_calls": 4,
+      "input_tokens": 83684,
+      "output_tokens": 440,
+      "cached_input_tokens": 75267,
+      "reasoning_tokens": null,
+      "total_tokens": 84124,
+      "tool_counts": {
+        "get_file": 3,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11392,
+          "output_tokens": 113,
+          "cached_input_tokens": 11389,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13107,
+          "output_tokens": 105,
+          "cached_input_tokens": 11389,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 14508,
+          "output_tokens": 155,
+          "cached_input_tokens": 11389,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 14812,
+          "output_tokens": 37,
+          "cached_input_tokens": 11389,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 14911,
+          "output_tokens": 26,
+          "cached_input_tokens": 14809,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 14954,
+          "output_tokens": 4,
+          "cached_input_tokens": 14902,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A2-T01",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 62549,
+      "output_tokens": 694,
+      "cached_input_tokens": 47913,
+      "reasoning_tokens": null,
+      "total_tokens": 63243,
+      "tool_counts": {
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10988,
+          "output_tokens": 226,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 12510,
+          "output_tokens": 332,
+          "cached_input_tokens": 10985,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 12890,
+          "output_tokens": 113,
+          "cached_input_tokens": 10985,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 13065,
+          "output_tokens": 14,
+          "cached_input_tokens": 12887,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 13096,
+          "output_tokens": 9,
+          "cached_input_tokens": 13056,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A2-T02",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 57906,
+      "output_tokens": 792,
+      "cached_input_tokens": 56039,
+      "reasoning_tokens": null,
+      "total_tokens": 58698,
+      "tool_counts": {
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10987,
+          "output_tokens": 341,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11349,
+          "output_tokens": 287,
+          "cached_input_tokens": 10984,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 11711,
+          "output_tokens": 141,
+          "cached_input_tokens": 10984,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11914,
+          "output_tokens": 14,
+          "cached_input_tokens": 11708,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 11945,
+          "output_tokens": 9,
+          "cached_input_tokens": 11905,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A2-T03",
+      "status": "passed",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "input_tokens": 46045,
+      "output_tokens": 585,
+      "cached_input_tokens": 44692,
+      "reasoning_tokens": null,
+      "total_tokens": 46630,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10998,
+          "output_tokens": 342,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11486,
+          "output_tokens": 217,
+          "cached_input_tokens": 10995,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "chat",
+          "input_tokens": 11765,
+          "output_tokens": 14,
+          "cached_input_tokens": 11483,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11796,
+          "output_tokens": 12,
+          "cached_input_tokens": 11756,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A2-T04",
+      "status": "passed",
+      "model_calls": 6,
+      "tool_calls": 6,
+      "input_tokens": 77120,
+      "output_tokens": 808,
+      "cached_input_tokens": 71395,
+      "reasoning_tokens": null,
+      "total_tokens": 77928,
+      "tool_counts": {
+        "get_file": 4,
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11006,
+          "output_tokens": 160,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11483,
+          "output_tokens": 146,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 12527,
+          "output_tokens": 219,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 13807,
+          "output_tokens": 264,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 14133,
+          "output_tokens": 14,
+          "cached_input_tokens": 13804,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 11,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 12,
+          "operation": "chat",
+          "input_tokens": 14164,
+          "output_tokens": 5,
+          "cached_input_tokens": 14124,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A2-T05",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 57142,
+      "output_tokens": 605,
+      "cached_input_tokens": 55614,
+      "reasoning_tokens": null,
+      "total_tokens": 57747,
+      "tool_counts": {
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11006,
+          "output_tokens": 223,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11247,
+          "output_tokens": 191,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 11466,
+          "output_tokens": 168,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11696,
+          "output_tokens": 14,
+          "cached_input_tokens": 11463,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 11727,
+          "output_tokens": 9,
+          "cached_input_tokens": 11687,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A2-T06",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 66192,
+      "output_tokens": 313,
+      "cached_input_tokens": 60676,
+      "reasoning_tokens": null,
+      "total_tokens": 66505,
+      "tool_counts": {
+        "get_file": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10972,
+          "output_tokens": 101,
+          "cached_input_tokens": 10458,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 12675,
+          "output_tokens": 99,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 14070,
+          "output_tokens": 90,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 14222,
+          "output_tokens": 14,
+          "cached_input_tokens": 14067,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 14253,
+          "output_tokens": 9,
+          "cached_input_tokens": 14213,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A3-T01",
+      "status": "passed",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "input_tokens": 45269,
+      "output_tokens": 395,
+      "cached_input_tokens": 44737,
+      "reasoning_tokens": null,
+      "total_tokens": 45664,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10988,
+          "output_tokens": 271,
+          "cached_input_tokens": 10985,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11308,
+          "output_tokens": 101,
+          "cached_input_tokens": 10985,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "chat",
+          "input_tokens": 11471,
+          "output_tokens": 14,
+          "cached_input_tokens": 11305,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11502,
+          "output_tokens": 9,
+          "cached_input_tokens": 11462,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A3-T02",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 62126,
+      "output_tokens": 716,
+      "cached_input_tokens": 58684,
+      "reasoning_tokens": null,
+      "total_tokens": 62842,
+      "tool_counts": {
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10987,
+          "output_tokens": 240,
+          "cached_input_tokens": 10984,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 12386,
+          "output_tokens": 302,
+          "cached_input_tokens": 10984,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 12766,
+          "output_tokens": 150,
+          "cached_input_tokens": 10984,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 12978,
+          "output_tokens": 14,
+          "cached_input_tokens": 12763,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 13009,
+          "output_tokens": 10,
+          "cached_input_tokens": 12969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A3-T03",
+      "status": "failed_quality",
+      "model_calls": 6,
+      "tool_calls": 4,
+      "input_tokens": 69541,
+      "output_tokens": 775,
+      "cached_input_tokens": 68519,
+      "reasoning_tokens": null,
+      "total_tokens": 70316,
+      "tool_counts": {
+        "run_command_in_terminal": 3,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10998,
+          "output_tokens": 277,
+          "cached_input_tokens": 10995,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11381,
+          "output_tokens": 121,
+          "cached_input_tokens": 10995,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 11531,
+          "output_tokens": 121,
+          "cached_input_tokens": 11378,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 11670,
+          "output_tokens": 233,
+          "cached_input_tokens": 11528,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 11965,
+          "output_tokens": 14,
+          "cached_input_tokens": 11667,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 11996,
+          "output_tokens": 9,
+          "cached_input_tokens": 11956,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A3-T04",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 5,
+      "input_tokens": 63349,
+      "output_tokens": 705,
+      "cached_input_tokens": 59666,
+      "reasoning_tokens": null,
+      "total_tokens": 64054,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "get_file": 3,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11006,
+          "output_tokens": 219,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 12125,
+          "output_tokens": 158,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 13151,
+          "output_tokens": 305,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 13518,
+          "output_tokens": 14,
+          "cached_input_tokens": 13148,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 9,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 13549,
+          "output_tokens": 9,
+          "cached_input_tokens": 13509,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A3-T05",
+      "status": "passed",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "input_tokens": 45650,
+      "output_tokens": 526,
+      "cached_input_tokens": 44999,
+      "reasoning_tokens": null,
+      "total_tokens": 46176,
+      "tool_counts": {
+        "run_command_in_terminal": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11006,
+          "output_tokens": 354,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": true,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 11397,
+          "output_tokens": 149,
+          "cached_input_tokens": 11003,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "chat",
+          "input_tokens": 11608,
+          "output_tokens": 14,
+          "cached_input_tokens": 11394,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 5,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 11639,
+          "output_tokens": 9,
+          "cached_input_tokens": 11599,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "A3-T06",
+      "status": "passed",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "input_tokens": 66117,
+      "output_tokens": 290,
+      "cached_input_tokens": 61159,
+      "reasoning_tokens": null,
+      "total_tokens": 66407,
+      "tool_counts": {
+        "get_file": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 10972,
+          "output_tokens": 77,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 12651,
+          "output_tokens": 118,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 14065,
+          "output_tokens": 72,
+          "cached_input_tokens": 10969,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "chat",
+          "input_tokens": 14199,
+          "output_tokens": 14,
+          "cached_input_tokens": 14062,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 7,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 8,
+          "operation": "chat",
+          "input_tokens": 14230,
+          "output_tokens": 9,
+          "cached_input_tokens": 14190,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B3-T01",
+      "status": "failed_quality",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "input_tokens": 104252,
+      "output_tokens": 1000,
+      "cached_input_tokens": 78172,
+      "reasoning_tokens": null,
+      "total_tokens": 105252,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11408,
+          "output_tokens": 109,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13187,
+          "output_tokens": 64,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15078,
+          "output_tokens": 395,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15539,
+          "output_tokens": 145,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 16119,
+          "output_tokens": 264,
+          "cached_input_tokens": 11405,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "chat",
+          "input_tokens": 16445,
+          "output_tokens": 14,
+          "cached_input_tokens": 16116,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 11,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 12,
+          "operation": "chat",
+          "input_tokens": 16476,
+          "output_tokens": 9,
+          "cached_input_tokens": 16436,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B3-T02",
+      "status": "passed",
+      "model_calls": 12,
+      "tool_calls": 10,
+      "input_tokens": 194070,
+      "output_tokens": 1953,
+      "cached_input_tokens": 161737,
+      "reasoning_tokens": null,
+      "total_tokens": 196023,
+      "tool_counts": {
+        "get_file": 2,
+        "run_command_in_terminal": 6,
+        "record_observation": 1,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11407,
+          "output_tokens": 114,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13191,
+          "output_tokens": 175,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15193,
+          "output_tokens": 265,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15524,
+          "output_tokens": 98,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "record_observation",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 15648,
+          "output_tokens": 147,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 16747,
+          "output_tokens": 350,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 13,
+          "operation": "chat",
+          "input_tokens": 17133,
+          "output_tokens": 211,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 14,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 15,
+          "operation": "chat",
+          "input_tokens": 17377,
+          "output_tokens": 180,
+          "cached_input_tokens": 11404,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 16,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 17,
+          "operation": "chat",
+          "input_tokens": 17601,
+          "output_tokens": 229,
+          "cached_input_tokens": 17374,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 18,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 19,
+          "operation": "chat",
+          "input_tokens": 17924,
+          "output_tokens": 161,
+          "cached_input_tokens": 17598,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 20,
+          "operation": "chat",
+          "input_tokens": 18147,
+          "output_tokens": 14,
+          "cached_input_tokens": 17921,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 21,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 22,
+          "operation": "chat",
+          "input_tokens": 18178,
+          "output_tokens": 9,
+          "cached_input_tokens": 18138,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    },
+    {
+      "run_id": "B3-T03",
+      "status": "passed",
+      "model_calls": 8,
+      "tool_calls": 6,
+      "input_tokens": 127181,
+      "output_tokens": 1227,
+      "cached_input_tokens": 103957,
+      "reasoning_tokens": null,
+      "total_tokens": 128408,
+      "tool_counts": {
+        "get_file": 3,
+        "run_command_in_terminal": 2,
+        "task_complete": 1
+      },
+      "calls": [
+        {
+          "ordinal": 1,
+          "operation": "chat",
+          "input_tokens": 11418,
+          "output_tokens": 112,
+          "cached_input_tokens": 10878,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 2,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 3,
+          "operation": "chat",
+          "input_tokens": 13200,
+          "output_tokens": 89,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 4,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": true,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 5,
+          "operation": "chat",
+          "input_tokens": 15116,
+          "output_tokens": 101,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 6,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "get_file",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 7,
+          "operation": "chat",
+          "input_tokens": 15947,
+          "output_tokens": 234,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 8,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 9,
+          "operation": "chat",
+          "input_tokens": 17277,
+          "output_tokens": 391,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 10,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "run_command_in_terminal",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": true,
+            "search_helper_command": true,
+            "direct_scan_flag": true,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 11,
+          "operation": "chat",
+          "input_tokens": 17840,
+          "output_tokens": 274,
+          "cached_input_tokens": 11415,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 12,
+          "operation": "chat",
+          "input_tokens": 18176,
+          "output_tokens": 14,
+          "cached_input_tokens": 17837,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        },
+        {
+          "ordinal": 13,
+          "operation": "execute_tool",
+          "input_tokens": null,
+          "output_tokens": null,
+          "cached_input_tokens": null,
+          "reasoning_tokens": null,
+          "model": null,
+          "tool": "task_complete",
+          "error": false,
+          "search_evidence": {
+            "tgrep_command": false,
+            "search_helper_command": false,
+            "direct_scan_flag": false,
+            "skill_file_read": false,
+            "powershell_scan": false,
+            "readiness_command": false
+          }
+        },
+        {
+          "ordinal": 14,
+          "operation": "chat",
+          "input_tokens": 18207,
+          "output_tokens": 12,
+          "cached_input_tokens": 18167,
+          "reasoning_tokens": null,
+          "model": "gpt-5.6-luna",
+          "tool": null,
+          "error": false
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "all_primary_attempts": {
+      "standard": {
+        "runs": 12,
+        "quality_passes": 12,
+        "input_tokens": 722354,
+        "output_tokens": 7560,
+        "cached_input_tokens": 660436,
+        "total_tokens": 729914,
+        "model_calls": 59,
+        "tool_calls": 39,
+        "uncached_input_tokens": 61918,
+        "median_total_tokens": 59554.0
+      },
+      "skill": {
+        "runs": 12,
+        "quality_passes": 11,
+        "input_tokens": 1369356,
+        "output_tokens": 14098,
+        "cached_input_tokens": 1149670,
+        "total_tokens": 1383454,
+        "model_calls": 89,
+        "tool_calls": 69,
+        "uncached_input_tokens": 219686,
+        "median_total_tokens": 106227.5
+      },
+      "token_ratio_standard_over_skill": 0.5276026524915176,
+      "token_saving_percent": -89.53657554177616,
+      "uncached_input_saving_percent": -254.80151167673375
+    },
+    "by_task": {
+      "T01": {
+        "standard": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 108032,
+          "output_tokens": 1161,
+          "cached_input_tokens": 81807,
+          "total_tokens": 109193,
+          "model_calls": 9,
+          "tool_calls": 5,
+          "uncached_input_tokens": 26225,
+          "median_total_tokens": 54596.5
+        },
+        "skill": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 190451,
+          "output_tokens": 1560,
+          "cached_input_tokens": 154727,
+          "total_tokens": 192011,
+          "model_calls": 13,
+          "tool_calls": 9,
+          "uncached_input_tokens": 35724,
+          "median_total_tokens": 96005.5
+        },
+        "token_ratio_standard_over_skill": 0.5686809609866101,
+        "token_saving_percent": -75.84552123304607,
+        "uncached_input_saving_percent": -36.22116301239276
+      },
+      "T02": {
+        "standard": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 103733,
+          "output_tokens": 1358,
+          "cached_input_tokens": 100605,
+          "total_tokens": 105091,
+          "model_calls": 9,
+          "tool_calls": 5,
+          "uncached_input_tokens": 3128,
+          "median_total_tokens": 52545.5
+        },
+        "skill": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 323348,
+          "output_tokens": 3467,
+          "cached_input_tokens": 255595,
+          "total_tokens": 326815,
+          "model_calls": 20,
+          "tool_calls": 16,
+          "uncached_input_tokens": 67753,
+          "median_total_tokens": 163407.5
+        },
+        "token_ratio_standard_over_skill": 0.32156112785520863,
+        "token_saving_percent": -210.98286247157225,
+        "uncached_input_saving_percent": -2066.0166240409208
+      },
+      "T03": {
+        "standard": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 105534,
+          "output_tokens": 1506,
+          "cached_input_tokens": 101614,
+          "total_tokens": 107040,
+          "model_calls": 9,
+          "tool_calls": 5,
+          "uncached_input_tokens": 3920,
+          "median_total_tokens": 53520.0
+        },
+        "skill": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 255677,
+          "output_tokens": 3449,
+          "cached_input_tokens": 207999,
+          "total_tokens": 259126,
+          "model_calls": 16,
+          "tool_calls": 12,
+          "uncached_input_tokens": 47678,
+          "median_total_tokens": 129563.0
+        },
+        "token_ratio_standard_over_skill": 0.41308089500860584,
+        "token_saving_percent": -142.08333333333334,
+        "uncached_input_saving_percent": -1116.2755102040817
+      },
+      "T04": {
+        "standard": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 169313,
+          "output_tokens": 1736,
+          "cached_input_tokens": 154603,
+          "total_tokens": 171049,
+          "model_calls": 13,
+          "tool_calls": 12,
+          "uncached_input_tokens": 14710,
+          "median_total_tokens": 85524.5
+        },
+        "skill": {
+          "runs": 2,
+          "quality_passes": 1,
+          "input_tokens": 254883,
+          "output_tokens": 2828,
+          "cached_input_tokens": 219024,
+          "total_tokens": 257711,
+          "model_calls": 16,
+          "tool_calls": 16,
+          "uncached_input_tokens": 35859,
+          "median_total_tokens": 128855.5
+        },
+        "token_ratio_standard_over_skill": 0.6637240940433276,
+        "token_saving_percent": -50.66501411876129,
+        "uncached_input_saving_percent": -143.77294357579876
+      },
+      "T05": {
+        "standard": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 102573,
+          "output_tokens": 1055,
+          "cached_input_tokens": 99925,
+          "total_tokens": 103628,
+          "model_calls": 9,
+          "tool_calls": 5,
+          "uncached_input_tokens": 2648,
+          "median_total_tokens": 51814.0
+        },
+        "skill": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 193195,
+          "output_tokens": 2083,
+          "cached_input_tokens": 174375,
+          "total_tokens": 195278,
+          "model_calls": 13,
+          "tool_calls": 9,
+          "uncached_input_tokens": 18820,
+          "median_total_tokens": 97639.0
+        },
+        "token_ratio_standard_over_skill": 0.5306690973893629,
+        "token_saving_percent": -88.44134789825144,
+        "uncached_input_saving_percent": -610.7250755287009
+      },
+      "T06": {
+        "standard": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 133169,
+          "output_tokens": 744,
+          "cached_input_tokens": 121882,
+          "total_tokens": 133913,
+          "model_calls": 10,
+          "tool_calls": 7,
+          "uncached_input_tokens": 11287,
+          "median_total_tokens": 66956.5
+        },
+        "skill": {
+          "runs": 2,
+          "quality_passes": 2,
+          "input_tokens": 151802,
+          "output_tokens": 711,
+          "cached_input_tokens": 137950,
+          "total_tokens": 152513,
+          "model_calls": 11,
+          "tool_calls": 7,
+          "uncached_input_tokens": 13852,
+          "median_total_tokens": 76256.5
+        },
+        "token_ratio_standard_over_skill": 0.8780431832040547,
+        "token_saving_percent": -13.889614899225617,
+        "uncached_input_saving_percent": -22.725259147692036
+      }
+    },
+    "both_passed_pairs": {
+      "standard": {
+        "runs": 11,
+        "quality_passes": 11,
+        "input_tokens": 630161,
+        "output_tokens": 6632,
+        "cached_input_tokens": 577228,
+        "total_tokens": 636793,
+        "model_calls": 52,
+        "tool_calls": 33,
+        "uncached_input_tokens": 52933,
+        "median_total_tokens": 58698
+      },
+      "skill": {
+        "runs": 11,
+        "quality_passes": 11,
+        "input_tokens": 1239348,
+        "output_tokens": 12568,
+        "cached_input_tokens": 1034339,
+        "total_tokens": 1251916,
+        "model_calls": 81,
+        "tool_calls": 60,
+        "uncached_input_tokens": 205009,
+        "median_total_tokens": 105167
+      },
+      "token_ratio_standard_over_skill": 0.5086547340236884,
+      "token_saving_percent": -96.5970103314578,
+      "uncached_input_saving_percent": -287.2990384070429
+    },
+    "note": "Negative savings mean overhead. Cached input is a subset. Ratios describe this integration and workload, not intrinsic engine efficiency, billing, or universal performance.",
+    "additional_matched_pairs": {
+      "standard": {
+        "runs": 3,
+        "quality_passes": 2,
+        "input_tokens": 176936,
+        "output_tokens": 1886,
+        "cached_input_tokens": 171940,
+        "total_tokens": 178822,
+        "model_calls": 15,
+        "tool_calls": 9,
+        "uncached_input_tokens": 4996,
+        "median_total_tokens": 62842
+      },
+      "skill": {
+        "runs": 3,
+        "quality_passes": 2,
+        "input_tokens": 425503,
+        "output_tokens": 4180,
+        "cached_input_tokens": 343866,
+        "total_tokens": 429683,
+        "model_calls": 27,
+        "tool_calls": 21,
+        "uncached_input_tokens": 81637,
+        "median_total_tokens": 128408
+      },
+      "token_ratio_standard_over_skill": 0.41617192209140225,
+      "token_saving_percent": -140.28531165069174,
+      "uncached_input_saving_percent": -1534.0472377902322
+    },
+    "additional_unmatched": {
+      "run_ids": [
+        "A3-T04",
+        "A3-T05",
+        "A3-T06"
+      ],
+      "counters": {
+        "runs": 3,
+        "quality_passes": 3,
+        "input_tokens": 175116,
+        "output_tokens": 1521,
+        "cached_input_tokens": 165824,
+        "total_tokens": 176637,
+        "model_calls": 14,
+        "tool_calls": 10,
+        "uncached_input_tokens": 9292,
+        "median_total_tokens": 64054
+      }
+    },
+    "completed_repetitions": 2,
+    "recorded_attempts": 33
+  }
+}

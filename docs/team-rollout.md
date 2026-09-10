@@ -8,7 +8,7 @@ The repository is private. Employees need read access or an approved internal pa
 
 ## Current gate
 
-The [pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results. **It failed unattended completion in the tested Visual Studio configuration, including under Autopilot.** The current revision improves setup and error capture but does not claim a fix for that terminal output channel. Company-wide deployment remains gated on a passing complete agent task.
+The [engine pilot](benchmark-results.md) passed installation, automatic skill loading and equivalent engine results but failed complete agent execution with its original terminal profile. A later PowerShell 7 profile allowed complete attempts. However, the [token benchmark](token-benchmark-results.md) found **89.54% more model tokens** with the current integration and correctness failures. Company-wide deployment remains gated on representative quality and efficiency improvements, as well as clean onboarding acceptance. One successful completed answer is insufficient.
 
 ## Distribution checklist
 

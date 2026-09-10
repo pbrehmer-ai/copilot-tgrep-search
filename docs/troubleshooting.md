@@ -11,7 +11,7 @@ Observed in Visual Studio Enterprise 18.9.12112.369 with GPT-5.6 Luna and Window
 3. Restart Visual Studio and use a fresh chat. Ask for only PowerShell version and working directory through the terminal tool.
 4. Require a completed chat answer. If only the console receives output, the terminal path fails acceptance. Use available IDE search and collect the exact VS build, shell profile, model and sanitized reproduction for your administrator or Visual Studio support.
 
-A supported alternative terminal profile is a possible controlled experiment, **not a verified fix**. The pilot inspected profiles but did not change them. Do not apply VS Code terminal settings to Visual Studio. The new search helper preserves errors and limits its search client's lifetime; it cannot repair the IDE-to-agent output channel.
+In the later [token benchmark](token-benchmark-results.md), a temporary **PowerShell 7.6.5 `-NoLogo -NoProfile`** profile passed the control and allowed complete Copilot attempts on this machine. Use a company-approved PowerShell executable when trying this profile through Visual Studio's terminal profile options and Copilot's preferred terminal profile setting. Require a fresh-chat round trip before proceeding. This is an observed working configuration, not a proven root cause or universal fix; do not copy VS Code settings or another person's executable path. The benchmark restored the original settings afterwards. The search helper cannot repair the IDE-to-agent output channel.
 
 ## Installation and discovery
 
