@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1-pilot
+
+- Clarify that helper evidence already reads current saved contents. Avoid duplicate get_file calls over the same ranges and stop after the requested verified example.
+- Keep default evidence limits until a specific gap requires expansion.
+- This final wording adjustment follows the development comparison; evaluate it only on the held-out pair without extending the twelve-attempt budget.
+
 ## 0.4.0-pilot
 
 - Add optional current source evidence to the first indexed discovery call: numbered matches, bounded context, a shared source-character budget and explicit truncation/errors.
